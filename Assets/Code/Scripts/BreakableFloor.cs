@@ -25,7 +25,6 @@ namespace Brackeys2026
         #region Custom Methods
 
         public void Break() {
-            ColourLogger.Log(this, "Breakable hit");
             Destroy(gameObject);
         }
 

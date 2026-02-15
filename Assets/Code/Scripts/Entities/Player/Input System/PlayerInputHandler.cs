@@ -60,6 +60,7 @@ namespace Brackeys2026
             _mapActions.Movement.canceled += OnMovementCanceled;
 
             _mapActions.Jump.performed += OnJumpPerformed;
+            _mapActions.Jump.canceled += OnJumpReleased;
         }
 
         private void DisableInputs() {
@@ -67,13 +68,14 @@ namespace Brackeys2026
             _mapActions.Movement.canceled -= OnMovementCanceled;
 
             _mapActions.Jump.performed -= OnJumpPerformed;
+            _mapActions.Jump.canceled -= OnJumpReleased;
+
             _mapActions.GroundPound.performed -= OnGroundPoundPerformed;
 
             _mapActions.Disable();
         }
 
         private void OnMovementPerformed(InputAction.CallbackContext context) {
-            ColourLogger.Log(this, $"Movement performed: {context.ReadValue<float>()}");
             player.movement.SetMoveDirection(context.ReadValue<float>());
         }
 
@@ -82,17 +84,11 @@ namespace Brackeys2026
         }
 
         private void OnJumpPerformed(InputAction.CallbackContext context) {
-            //if (player.isJumping) {
-            //    return;
-            //}
+            player.movement.BeginJumpBuffer();
+        }
 
-            if (!player.CheckIfGrounded()) {
-                ColourLogger.Log(this, "not grounded");
-                return;
-            }
-
-            ColourLogger.Log(this, "Jump performed");
-            player.movement.Jump();
+        private void OnJumpReleased(InputAction.CallbackContext context) {
+            player.movement.ResetJumpTime();
         }
 
         private void EnableGroundPound() {
@@ -108,7 +104,6 @@ namespace Brackeys2026
                 return;
             }
 
-            ColourLogger.Log(this, "Ground Pounded");
             player.movement.GroundPound();
         }
 

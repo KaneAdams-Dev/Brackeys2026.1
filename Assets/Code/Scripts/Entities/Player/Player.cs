@@ -12,16 +12,11 @@ namespace Brackeys2026
 
         [Header("Stats")]
         [SerializeField] internal float moveSpeed = 10f;
-        [SerializeField] private float _raySize = 10f;
-        [SerializeField] private LayerMask _jumpableLayers;
 
         internal bool canJump;
         internal bool isJumping;
 
-
         internal bool isGroundPounding;
-
-
 
         #endregion Variables
 
@@ -60,11 +55,6 @@ namespace Brackeys2026
         #endregion Unity Methods
 
         #region Custom Methods
-
-        internal bool CheckIfGrounded() {
-            Debug.DrawRay(transform.position, Vector2.down * _raySize, Color.red, 10.0f);
-            return Physics2D.Raycast(transform.position, Vector2.down, _raySize, _jumpableLayers);
-        }
 
         #endregion Custom Methods
     }

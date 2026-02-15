@@ -79,6 +79,12 @@ namespace Brackeys2026
         internal void GroundPound() {
             player.isGroundPounding = true;
             _rbody.AddForceY(_jumpForce * -3f, ForceMode2D.Impulse);
+
+            Invoke(nameof(StopGroundPound), 0.5f);
+        }
+
+        internal void StopGroundPound() {
+            player.isGroundPounding = false;
         }
 
         internal bool CheckIfGrounded() {

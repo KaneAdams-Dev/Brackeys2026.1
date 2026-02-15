@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 namespace KabejaDevTools
 {
@@ -15,8 +16,17 @@ namespace KabejaDevTools
         [Tooltip("How long in seconds between screenshots")]
         [Range(1, 100)][SerializeField] private int timeSpan = 50;
 
+        private string savePath;
+
         // Start is called before the first frame update
         private void Start() {
+            string desktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+            if (!Directory.Exists(desktopPath + @"\Brackeys2026-1Screenshots\")) {
+                Directory.CreateDirectory(desktopPath + @"\Brackeys2026-1Screenshots\");
+            }
+
+            savePath = desktopPath + @"\Brackeys2026-1Screenshots\";
+
             if (takeScreenshots) {
                 InvokeRepeating(nameof(TakeScreenshot), timeSpan, timeSpan);
             }
@@ -34,7 +44,7 @@ namespace KabejaDevTools
         /// Takes screenshot of game screen and saves in project root folder
         /// </summary>
         private void TakeScreenshot() {
-            ScreenCapture.CaptureScreenshot("GameScreenshot" + System.DateTime.Now.ToString("MM-dd-yy (HH-mm-ss)") + ".png");
+            ScreenCapture.CaptureScreenshot(savePath + "GameScreenshot" + System.DateTime.Now.ToString("MM-dd-yy (HH-mm-ss)") + ".png");
             Debug.Log("Screenshot Taken");
         }
     }

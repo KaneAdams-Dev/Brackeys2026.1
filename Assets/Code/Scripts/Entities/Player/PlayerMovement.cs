@@ -10,6 +10,10 @@ namespace Brackeys2026
 
         [SerializeField] private Rigidbody2D _rbody;
 
+        private float _moveDir = 0f;
+        [SerializeField] private float _jumpForce = 100f;
+
+
         #endregion Variables
 
         #region Unity Methods
@@ -24,18 +28,32 @@ namespace Brackeys2026
 
         }
 
-        //private void FixedUpdate() {
-        //    Move();
-        //}
-
-
+        private void FixedUpdate() {
+            Move();
+        }
 
         #endregion Unity Methods
 
         #region Custom Methods
 
-        internal void Move(float a_inputDir) {
-            _rbody.linearVelocityX = a_inputDir * player.moveSpeed;
+        internal void SetMoveDirection(float a_inputDir) {
+            _moveDir = a_inputDir;
+        }
+
+        internal void Move() {
+            _rbody.linearVelocityX = _moveDir * player.moveSpeed;
+        }
+
+        internal void Jump() {
+
+
+            player.isJumping = true;
+            _rbody.AddForceY(_jumpForce, ForceMode2D.Impulse);
+        }
+
+        internal void GroundPound() {
+            player.isGroundPounding = true;
+            _rbody.AddForceY(_jumpForce * -3f, ForceMode2D.Impulse);
         }
 
         #endregion Custom Methods

@@ -7,6 +7,8 @@ namespace Brackeys2026
     {
         #region Variables
 
+        [SerializeField] internal Player player;
+
         public PlayerActions playerActions;
         private PlayerActions.MetroidvaniaActions _mapActions;
 
@@ -18,11 +20,12 @@ namespace Brackeys2026
         private void Awake() {
             playerActions = new PlayerActions();
             _mapActions = playerActions.Metroidvania;
+
+            ColourLogger.RegisterColour(this, "cyan");
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start() {
-            ColourLogger.RegisterColour(this, "cyan");
         }
 
         // Update is called once per frame
@@ -55,8 +58,6 @@ namespace Brackeys2026
 
             _mapActions.Movement.performed += OnMovementPerformed;
             _mapActions.Jump.performed += OnJumpPerformed;
-
-            ColourLogger.Log(this, "inputs turned on");
         }
 
         private void DisableInputs() {
@@ -69,6 +70,7 @@ namespace Brackeys2026
 
         private void OnMovementPerformed(InputAction.CallbackContext context) {
             ColourLogger.Log(this, $"Movement performed: {context.ReadValue<float>()}");
+            player.movement.Move(context.ReadValue<float>());
         }
 
         private void OnJumpPerformed(InputAction.CallbackContext context) {

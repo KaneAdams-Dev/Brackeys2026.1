@@ -3,7 +3,7 @@
     "name": "PlayerActions",
     "maps": [
         {
-            "name": "Metroidvania Actions",
+            "name": "Metroidvania",
             "id": "fa92f97d-4b62-414f-9f4c-3c1556d42066",
             "actions": [
                 {
@@ -19,6 +19,15 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "72fa4b2d-485b-4a37-9f13-1af74fc0e66f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ground Pound",
+                    "type": "Button",
+                    "id": "f1727052-54ed-4fbc-87d9-25d39ed1abdd",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -43,7 +52,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";KeyboardMouse",
+                    "groups": ";KeyboardMouse;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -54,7 +63,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";KeyboardMouse",
+                    "groups": ";KeyboardMouse;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -98,7 +107,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";KeyboardMouse",
+                    "groups": ";KeyboardMouse;Keyboard",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -113,14 +122,36 @@
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aeff3f55-59e1-4f4c-8d77-223853a0d276",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Ground Pound",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f3eb6f3c-8bed-491b-aaaf-0fe735fa245b",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "Ground Pound",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
     ],
     "controlSchemes": [
         {
-            "name": "KeyboardMouse",
-            "bindingGroup": "KeyboardMouse",
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",

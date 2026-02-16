@@ -17,30 +17,49 @@ namespace Brackeys2026
         [SerializeField] internal BHMovement movement;
         internal float moveSpeed;
 
+        [SerializeField] internal SpriteRenderer spriteRend;
+        private bool canDestroy;
+
         #endregion Variables
 
         #region Unity Methods
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start() {
-
+            canDestroy = false;
         }
 
         // Update is called once per frame
         private void Update() {
+            if (!canDestroy) {
+                return;
+            }
 
+            if (!spriteRend.isVisible) {
+                //Destroy(gameObject);
+                ObjectPoolManager.ReturnToPool(gameObject);
+            }
         }
 
         // This function is called when the object becomes enabled and active
         private void OnEnable() {
-            AssignStats(_defaultStats);
+            //AssignStats(_defaultStats);
+            Invoke(nameof(EnableDestroyOnLeaveScreen), 2f);
         }
+
+        // This function is called when the behaviour becomes disabled or inactive
+        private void OnDisable() {
+            Destroy(movement);
+            Destroy(attack);
+            canDestroy = false;
+        }
+
 
         #endregion Unity Methods
 
         #region Custom Methods
 
-        private void AssignStats(BulletHellSO a_stats) {
+        public void AssignStats(BulletHellSO a_stats) {
             //attack = a_stats.Attack;
             //movement = a_stats.Movement;
             _maxHealth = a_stats.Health;
@@ -65,6 +84,10 @@ namespace Brackeys2026
                 BHDifficulties.Advance => gameObject.AddComponent<BHAttack>(),
                 _ => gameObject.AddComponent<BHAttack>()
             };
+        }
+
+        private void EnableDestroyOnLeaveScreen() {
+            canDestroy = true;
         }
 
         #endregion Custom Methods

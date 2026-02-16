@@ -23,7 +23,7 @@ namespace Brackeys2026
         internal override void Fire() {
             base.Fire();
 
-            Instantiate(_enemy.projectile, transform.position, Quaternion.identity);
+            ObjectPoolManager.SpawnObject(_enemy.projectile, transform.position, Quaternion.identity);
         }
 
         #endregion Custom Methods

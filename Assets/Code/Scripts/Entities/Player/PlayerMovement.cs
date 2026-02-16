@@ -47,6 +47,14 @@ namespace Brackeys2026
                 canDoubleJump = true;
                 isDoubleJumping = false;
 
+                if (player._currentState == PlayerStates.Fall) {
+                    player.UpdateState(PlayerStates.Land);
+                    player.animator.canInterupt = false;
+                } else if (player._currentState == PlayerStates.GroundPoundFall) {
+                    player.UpdateState(PlayerStates.GroundPoundLand);
+                    player.animator.canInterupt = false;
+                }
+
             } else {
                 _coyoteTimeCounter -= Time.deltaTime;
             }
@@ -55,6 +63,8 @@ namespace Brackeys2026
         }
 
         private void FixedUpdate() {
+            if (!player.animator.canInterupt) return;
+
             Move();
             Jump();
             ApplyVariableGravity();
@@ -66,18 +76,35 @@ namespace Brackeys2026
 
         internal void SetMoveDirection(float a_inputDir) {
             _moveDir = a_inputDir;
+            if (player.isGroundPounding) {
+                _moveDir = 0;
+            }
+
+            if (_moveDir < 0) {
+                player.animator.transform.rotation = Quaternion.Euler(0, 180, 0);
+            } else if (_moveDir > 0) {
+                player.animator.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
         }
 
         internal void Move() {
             _rbody.linearVelocityX = _moveDir * player.moveSpeed;
+
+            if (_rbody.linearVelocityY != 0) return;
+
+            player.UpdateState(Mathf.Abs(_rbody.linearVelocityX) > 0.1f ? PlayerStates.Run : PlayerStates.Idle);
         }
 
         internal void ApplyVariableGravity() {
             if (_rbody.linearVelocityY > 0.1f) {
                 _rbody.gravityScale = _jumpGravity;
 
-            } else if (_rbody.linearVelocityY < 0.1f) {
+            } else if (_rbody.linearVelocityY < -0.1f) {
                 _rbody.gravityScale = _fallGravity;
+
+                if (!player.isGroundPounding) {
+                    player.UpdateState(PlayerStates.Fall);
+                }
 
             } else {
                 _rbody.gravityScale = _normalGravity;
@@ -94,6 +121,7 @@ namespace Brackeys2026
 
                 player.isJumping = true;
                 _rbody.linearVelocityY = _jumpForce;
+                player.UpdateState(PlayerStates.Jump);
             }
         }
 
@@ -102,6 +130,7 @@ namespace Brackeys2026
                 _rbody.linearVelocityY = _jumpForce * 0.75f;
                 canDoubleJump = false;
                 isDoubleJumping = true;
+                player.UpdateState(PlayerStates.Jump);
             }
         }
 
@@ -120,6 +149,9 @@ namespace Brackeys2026
 
             player.isGroundPounding = true;
             _rbody.AddForceY(_groundPoundForce, ForceMode2D.Impulse);
+            SetMoveDirection(0f);
+
+            player.UpdateState(PlayerStates.GroundPoundFall);
 
             //Invoke(nameof(StopGroundPound), 0.5f);
         }

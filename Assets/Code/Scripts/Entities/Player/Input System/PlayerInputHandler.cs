@@ -112,7 +112,7 @@ namespace Brackeys2026
         }
 
         private void OnGroundPoundReleased(InputAction.CallbackContext context) {
-            player.movement.StopGroundPound();
+            //player.movement.StopGroundPound();
         }
 
         #endregion Custom Methods

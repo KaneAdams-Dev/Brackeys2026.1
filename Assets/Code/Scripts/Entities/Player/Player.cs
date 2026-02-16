@@ -2,6 +2,17 @@ using UnityEngine;
 
 namespace Brackeys2026
 {
+    public enum PlayerStates
+    {
+        Idle,
+        Run,
+        Jump,
+        Fall,
+        Land,
+        GroundPoundFall,
+        GroundPoundLand
+    }
+
     public class Player : BaseEntities
     {
         #region Variables
@@ -9,6 +20,7 @@ namespace Brackeys2026
         [Header("References")]
         [SerializeField] internal PlayerInputHandler inputHandler;
         [SerializeField] internal PlayerMovement movement;
+        [SerializeField] internal PlayerAnimator animator;
 
         [Header("Stats")]
         [SerializeField] internal float moveSpeed = 10f;
@@ -20,6 +32,8 @@ namespace Brackeys2026
 
         [SerializeField] private float _raySize;
         [SerializeField] private LayerMask _groundPoundLayers;
+
+        internal PlayerStates _currentState;
 
         #endregion Variables
 
@@ -73,6 +87,19 @@ namespace Brackeys2026
         #endregion Unity Methods
 
         #region Custom Methods
+
+        internal void UpdateState(PlayerStates a_newState) {
+            if (_currentState == a_newState) return;
+
+            if (_currentState == PlayerStates.Land || _currentState == PlayerStates.GroundPoundLand) {
+                if (a_newState != PlayerStates.Idle) {
+
+                }
+            }
+
+            _currentState = a_newState;
+            animator.UpdateAnimation(_currentState.ToString());
+        }
 
         #endregion Custom Methods
     }

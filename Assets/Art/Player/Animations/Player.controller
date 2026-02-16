@@ -121,22 +121,22 @@ AnimatorStateMachine:
     m_Position: {x: 30, y: 320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5651584589378477041}
-    m_Position: {x: -170, y: 570, z: 0}
+    m_Position: {x: 30, y: 390, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3151131869010374947}
-    m_Position: {x: 190, y: 570, z: 0}
+    m_Position: {x: 260, y: 390, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4840696537888083288}
-    m_Position: {x: 190, y: 630, z: 0}
+    m_Position: {x: 260, y: 460, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8491173506223892240}
-    m_Position: {x: 130, y: 700, z: 0}
+    m_Position: {x: 260, y: 520, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2907324226630476099}
-    m_Position: {x: 350, y: 700, z: 0}
+    m_Position: {x: 510, y: 390, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -669809543936434318}
-    m_Position: {x: 350, y: 780, z: 0}
+    m_Position: {x: 510, y: 450, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -179,7 +179,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Animator Controller
+  m_Name: Player
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:

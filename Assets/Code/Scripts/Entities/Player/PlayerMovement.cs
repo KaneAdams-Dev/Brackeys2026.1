@@ -12,6 +12,7 @@ namespace Brackeys2026
 
         private float _moveDir = 0f;
         [SerializeField] private float _jumpForce = 100f;
+        [SerializeField] private float _groundPoundForce = -32f;
 
         [SerializeField] private float _raySize = 10f;
         [SerializeField] private LayerMask _jumpableLayers;
@@ -21,6 +22,14 @@ namespace Brackeys2026
 
         private float _jumpBufferTime = 0.2f;
         private float _jumpBufferCounter;
+
+        internal bool canDoubleJump;
+        internal bool isDoubleJumping;
+
+        [SerializeField] private float _normalGravity;
+        [SerializeField] private float _fallGravity;
+        [SerializeField] private float _jumpGravity;
+
 
         #endregion Variables
 
@@ -35,6 +44,9 @@ namespace Brackeys2026
         private void Update() {
             if (CheckIfGrounded()) {
                 _coyoteTimeCounter = _coyoteTime;
+                canDoubleJump = true;
+                isDoubleJumping = false;
+
             } else {
                 _coyoteTimeCounter -= Time.deltaTime;
             }
@@ -45,6 +57,7 @@ namespace Brackeys2026
         private void FixedUpdate() {
             Move();
             Jump();
+            ApplyVariableGravity();
         }
 
         #endregion Unity Methods
@@ -57,6 +70,18 @@ namespace Brackeys2026
 
         internal void Move() {
             _rbody.linearVelocityX = _moveDir * player.moveSpeed;
+        }
+
+        internal void ApplyVariableGravity() {
+            if (_rbody.linearVelocityY > 0.1f) {
+                _rbody.gravityScale = _jumpGravity;
+
+            } else if (_rbody.linearVelocityY < 0.1f) {
+                _rbody.gravityScale = _fallGravity;
+
+            } else {
+                _rbody.gravityScale = _normalGravity;
+            }
         }
 
         internal void BeginJumpBuffer() {
@@ -72,15 +97,31 @@ namespace Brackeys2026
             }
         }
 
+        internal void DoubleJump() {
+            if (canDoubleJump) {
+                _rbody.linearVelocityY = _jumpForce * 0.75f;
+                canDoubleJump = false;
+                isDoubleJumping = true;
+            }
+        }
+
         internal void ResetJumpTime() {
             _coyoteTimeCounter = 0f;
+
+            if (_rbody.linearVelocityY > 0f && !isDoubleJumping) {
+                _rbody.linearVelocityY = _jumpForce * 0.5f;
+            }
         }
 
         internal void GroundPound() {
-            player.isGroundPounding = true;
-            _rbody.AddForceY(_jumpForce * -3f, ForceMode2D.Impulse);
+            if (CheckIfGrounded()) {
+                return;
+            }
 
-            Invoke(nameof(StopGroundPound), 0.5f);
+            player.isGroundPounding = true;
+            _rbody.AddForceY(_groundPoundForce, ForceMode2D.Impulse);
+
+            //Invoke(nameof(StopGroundPound), 0.5f);
         }
 
         internal void StopGroundPound() {

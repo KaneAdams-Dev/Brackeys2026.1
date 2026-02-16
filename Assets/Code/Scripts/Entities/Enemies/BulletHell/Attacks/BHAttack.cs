@@ -2,17 +2,21 @@ using UnityEngine;
 
 namespace Brackeys2026
 {
-    public class BreakableFloor : MonoBehaviour, IBreakable
+    [RequireComponent(typeof(BHEnemies))]
+    public class BHAttack : MonoBehaviour
     {
         #region Variables
-        [SerializeField] private Collider2D _collider;
+
+        [SerializeField] protected BHEnemies _enemy;
+        [SerializeField] protected GameObject _projectile;
+
         #endregion Variables
 
         #region Unity Methods
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
-        private void Start() {
-
+        virtual protected void Start() {
+            _enemy = GetComponent<BHEnemies>();
         }
 
         // Update is called once per frame
@@ -24,9 +28,8 @@ namespace Brackeys2026
 
         #region Custom Methods
 
-        public void Break() {
-            _collider.enabled = false;
-            Destroy(gameObject);
+        virtual internal void Fire() {
+
         }
 
         #endregion Custom Methods

@@ -71,6 +71,7 @@ namespace Brackeys2026
             _mapActions.Jump.canceled -= OnJumpReleased;
 
             _mapActions.GroundPound.performed -= OnGroundPoundPerformed;
+            _mapActions.GroundPound.canceled -= OnGroundPoundReleased;
 
             _mapActions.Disable();
         }
@@ -84,6 +85,11 @@ namespace Brackeys2026
         }
 
         private void OnJumpPerformed(InputAction.CallbackContext context) {
+
+            if (player.isJumping) {
+                player.movement.DoubleJump();
+            }
+
             player.movement.BeginJumpBuffer();
         }
 
@@ -93,18 +99,20 @@ namespace Brackeys2026
 
         private void EnableGroundPound() {
             _mapActions.GroundPound.performed += OnGroundPoundPerformed;
+            _mapActions.GroundPound.canceled += OnGroundPoundReleased;
         }
 
         private void DisableGroundPound() {
             _mapActions.GroundPound.performed -= OnGroundPoundPerformed;
+            _mapActions.GroundPound.canceled -= OnGroundPoundReleased;
         }
 
         private void OnGroundPoundPerformed(InputAction.CallbackContext context) {
-            if (!player.isJumping) {
-                return;
-            }
-
             player.movement.GroundPound();
+        }
+
+        private void OnGroundPoundReleased(InputAction.CallbackContext context) {
+            player.movement.StopGroundPound();
         }
 
         #endregion Custom Methods

@@ -18,6 +18,9 @@ namespace Brackeys2026
 
         internal bool isGroundPounding;
 
+        [SerializeField] private float _raySize;
+        [SerializeField] private LayerMask _groundPoundLayers;
+
         #endregion Variables
 
         #region Unity Methods
@@ -33,18 +36,33 @@ namespace Brackeys2026
             //if (isJumping) {
             //    CheckIfGrounded();
             //}
+
+            if (isGroundPounding) {
+
+                Debug.DrawRay(transform.position, Vector2.down * _raySize, Color.green, 0.2f);
+                if (Physics2D.Raycast(transform.position, Vector2.down, _raySize, _groundPoundLayers)) {
+
+                }
+
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, _raySize, _groundPoundLayers);
+                if (hit) {
+                    if (hit.collider.gameObject.TryGetComponent(out IBreakable breakable)) {
+                        breakable.Break();
+                    }
+                }
+            }
         }
 
         // OnCollisionEnter2D is called when this collider2D/rigidbody2D has begun touching another rigidbody2D/collider2D (2D physics only)
-        private void OnCollisionEnter2D(Collision2D collision) {
-            if (collision.gameObject.TryGetComponent(out IBreakable breakable)) {
-                if (!isGroundPounding) {
-                    return;
-                }
+        //private void OnCollisionEnter2D(Collision2D collision) {
+        //    if (collision.gameObject.TryGetComponent(out IBreakable breakable)) {
+        //        if (!isGroundPounding) {
+        //            return;
+        //        }
 
-                breakable.Break();
-            }
-        }
+        //        breakable.Break();
+        //    }
+        //}
 
         //// Implement this OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn
         //private void OnDrawGizmos() {

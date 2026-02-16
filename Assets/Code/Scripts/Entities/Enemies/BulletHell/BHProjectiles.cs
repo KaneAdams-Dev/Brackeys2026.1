@@ -2,10 +2,12 @@ using UnityEngine;
 
 namespace Brackeys2026
 {
-    public class BreakableFloor : MonoBehaviour, IBreakable
+    public class BHProjectiles : MonoBehaviour
     {
         #region Variables
-        [SerializeField] private Collider2D _collider;
+
+        [SerializeField] protected Rigidbody2D _rbdy;
+
         #endregion Variables
 
         #region Unity Methods
@@ -20,13 +22,18 @@ namespace Brackeys2026
 
         }
 
+        // This function is called every fixed framerate frame, if the MonoBehaviour is enabled
+        private void FixedUpdate() {
+            Move();
+        }
+
+
         #endregion Unity Methods
 
         #region Custom Methods
 
-        public void Break() {
-            _collider.enabled = false;
-            Destroy(gameObject);
+        private void Move() {
+            _rbdy.linearVelocityY = -15f;
         }
 
         #endregion Custom Methods

@@ -47,7 +47,7 @@ namespace Brackeys2026
                 canDoubleJump = true;
                 isDoubleJumping = false;
 
-                if (player._currentState == PlayerStates.Fall) {
+                if (player._currentState == PlayerStates.Fall || player._currentState == PlayerStates.Jump) {
                     player.UpdateState(PlayerStates.Land);
                     player.animator.canInterupt = false;
                 } else if (player._currentState == PlayerStates.GroundPoundFall) {

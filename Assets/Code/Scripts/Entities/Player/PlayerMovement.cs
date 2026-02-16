@@ -46,6 +46,7 @@ namespace Brackeys2026
                 _coyoteTimeCounter = _coyoteTime;
                 canDoubleJump = true;
                 isDoubleJumping = false;
+                StopGroundPound();
 
                 if (player._currentState == PlayerStates.Fall || player._currentState == PlayerStates.Jump) {
                     player.UpdateState(PlayerStates.Land);
@@ -63,11 +64,12 @@ namespace Brackeys2026
         }
 
         private void FixedUpdate() {
-            if (!player.animator.canInterupt) return;
+            //if (!player.animator.canInterupt) return;
+            //if (player.isGroundPounding) return;
 
+            ApplyVariableGravity();
             Move();
             Jump();
-            ApplyVariableGravity();
         }
 
         #endregion Unity Methods
@@ -76,21 +78,24 @@ namespace Brackeys2026
 
         internal void SetMoveDirection(float a_inputDir) {
             _moveDir = a_inputDir;
+        }
+
+        internal void Move() {
             if (player.isGroundPounding) {
                 _moveDir = 0;
             }
 
-            if (_moveDir < 0) {
-                player.animator.transform.rotation = Quaternion.Euler(0, 180, 0);
-            } else if (_moveDir > 0) {
-                player.animator.transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
-        }
-
-        internal void Move() {
             _rbody.linearVelocityX = _moveDir * player.moveSpeed;
 
-            if (_rbody.linearVelocityY != 0) return;
+            if (!player.isGroundPounding) {
+                if (_moveDir < 0) {
+                    player.animator.transform.rotation = Quaternion.Euler(0, 180, 0);
+                } else if (_moveDir > 0) {
+                    player.animator.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+            }
+
+            if (_rbody.linearVelocityY != 0 || player._currentState == PlayerStates.GroundPoundLand) return;
 
             player.UpdateState(Mathf.Abs(_rbody.linearVelocityX) > 0.1f ? PlayerStates.Run : PlayerStates.Idle);
         }

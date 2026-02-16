@@ -431,7 +431,7 @@ MonoBehaviour:
   _rbody: {fileID: 3651031706904725633}
   _jumpForce: 16
   _groundPoundForce: -32
-  _raySize: 1.25
+  _raySize: 0.5
   _jumpableLayers:
     serializedVersion: 2
     m_Bits: 64

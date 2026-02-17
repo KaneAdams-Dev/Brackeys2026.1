@@ -38,7 +38,11 @@ namespace Brackeys2026
             }
 
             if (Keyboard.current.qKey.wasPressedThisFrame) {
-                DisableGroundPound();
+                EnableGun();
+            }
+
+            if (Keyboard.current.hKey.wasPressedThisFrame) {
+                EnableSword();
             }
         }
 
@@ -90,7 +94,6 @@ namespace Brackeys2026
         }
 
         private void OnJumpPerformed(InputAction.CallbackContext context) {
-
             if (player.isJumping) {
                 player.movement.DoubleJump();
             }
@@ -118,6 +121,31 @@ namespace Brackeys2026
 
         private void OnGroundPoundReleased(InputAction.CallbackContext context) {
             //player.movement.StopGroundPound();
+        }
+
+        private void EnableSword() {
+            _mapActions.SwordAttack.performed += OnSwordAttackPerformed;
+        }
+
+
+        private void DisableSword() {
+            _mapActions.SwordAttack.performed -= OnSwordAttackPerformed;
+        }
+
+        private void OnSwordAttackPerformed(InputAction.CallbackContext context) {
+            player.animator.EquipSword();
+        }
+
+        private void EnableGun() {
+            _mapActions.GunAttack.performed += OnGunAttackPerformed;
+        }
+
+        private void DisableGun() {
+            _mapActions.GunAttack.performed -= OnGunAttackPerformed;
+        }
+
+        private void OnGunAttackPerformed(InputAction.CallbackContext context) {
+            player.animator.EquipGun();
         }
 
         #endregion Custom Methods

@@ -922,6 +922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Brackeys2026.PlayerAnimator
   _anim: {fileID: 7479774231784453550}
+  _layerFadeDuration: 0.5
 --- !u!114 &4734177885786017714
 MonoBehaviour:
   m_ObjectHideFlags: 0

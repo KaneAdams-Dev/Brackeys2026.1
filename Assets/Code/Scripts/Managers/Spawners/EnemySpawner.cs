@@ -47,7 +47,7 @@ namespace Brackeys2026
                 return;
             }
 
-            float randomX = Random.Range(_screenBounds.x - _objectWidth, _screenBounds.x * -1 + _objectWidth) + Camera.main.transform.position.x;
+            float randomX = Random.Range(_screenBounds.x - _objectWidth, _screenBounds.x * -1 + _objectWidth);
             float spawnY = (_screenBounds.y + _objectHeight) + 5;
 
             //GameObject spawnedObj = Instantiate(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);

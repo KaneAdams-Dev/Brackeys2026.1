@@ -118,6 +118,24 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sword Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""5837cb89-1a6e-4e6e-99b5-e3c41db45e64"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Gun Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""a36efbdb-8ac2-420d-ac4b-3188c1f1fec0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -230,6 +248,50 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""Ground Pound"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""36c67608-f088-4246-9542-65082dfb6fee"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""Sword Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e51a432-f3a7-441a-9907-cf05a03b70c5"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Controller"",
+                    ""action"": ""Sword Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c6cdbb5-a3a7-4b46-8eec-419b1201567e"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""Gun Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5761d4ad-41e2-4f7f-8dbc-9004ea7a84b2"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Controller"",
+                    ""action"": ""Gun Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -269,6 +331,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Metroidvania_Movement = m_Metroidvania.FindAction("Movement", throwIfNotFound: true);
         m_Metroidvania_Jump = m_Metroidvania.FindAction("Jump", throwIfNotFound: true);
         m_Metroidvania_GroundPound = m_Metroidvania.FindAction("Ground Pound", throwIfNotFound: true);
+        m_Metroidvania_SwordAttack = m_Metroidvania.FindAction("Sword Attack", throwIfNotFound: true);
+        m_Metroidvania_GunAttack = m_Metroidvania.FindAction("Gun Attack", throwIfNotFound: true);
     }
 
     ~@PlayerActions()
@@ -352,6 +416,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Metroidvania_Movement;
     private readonly InputAction m_Metroidvania_Jump;
     private readonly InputAction m_Metroidvania_GroundPound;
+    private readonly InputAction m_Metroidvania_SwordAttack;
+    private readonly InputAction m_Metroidvania_GunAttack;
     /// <summary>
     /// Provides access to input actions defined in input action map "Metroidvania".
     /// </summary>
@@ -375,6 +441,14 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Metroidvania/GroundPound".
         /// </summary>
         public InputAction @GroundPound => m_Wrapper.m_Metroidvania_GroundPound;
+        /// <summary>
+        /// Provides access to the underlying input action "Metroidvania/SwordAttack".
+        /// </summary>
+        public InputAction @SwordAttack => m_Wrapper.m_Metroidvania_SwordAttack;
+        /// <summary>
+        /// Provides access to the underlying input action "Metroidvania/GunAttack".
+        /// </summary>
+        public InputAction @GunAttack => m_Wrapper.m_Metroidvania_GunAttack;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -410,6 +484,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @GroundPound.started += instance.OnGroundPound;
             @GroundPound.performed += instance.OnGroundPound;
             @GroundPound.canceled += instance.OnGroundPound;
+            @SwordAttack.started += instance.OnSwordAttack;
+            @SwordAttack.performed += instance.OnSwordAttack;
+            @SwordAttack.canceled += instance.OnSwordAttack;
+            @GunAttack.started += instance.OnGunAttack;
+            @GunAttack.performed += instance.OnGunAttack;
+            @GunAttack.canceled += instance.OnGunAttack;
         }
 
         /// <summary>
@@ -430,6 +510,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @GroundPound.started -= instance.OnGroundPound;
             @GroundPound.performed -= instance.OnGroundPound;
             @GroundPound.canceled -= instance.OnGroundPound;
+            @SwordAttack.started -= instance.OnSwordAttack;
+            @SwordAttack.performed -= instance.OnSwordAttack;
+            @SwordAttack.canceled -= instance.OnSwordAttack;
+            @GunAttack.started -= instance.OnGunAttack;
+            @GunAttack.performed -= instance.OnGunAttack;
+            @GunAttack.canceled -= instance.OnGunAttack;
         }
 
         /// <summary>
@@ -517,5 +603,19 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnGroundPound(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Sword Attack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSwordAttack(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Gun Attack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnGunAttack(InputAction.CallbackContext context);
     }
 }

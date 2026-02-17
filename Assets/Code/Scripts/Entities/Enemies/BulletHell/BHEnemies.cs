@@ -7,6 +7,8 @@ namespace Brackeys2026
         #region Variables
 
         [SerializeField] internal BulletHellSO _defaultStats;
+        internal BulletHellSO _currentStats;
+
 
         [Header("Combat")]
         [SerializeField] internal BHAttack attack;
@@ -19,6 +21,8 @@ namespace Brackeys2026
 
         [SerializeField] internal SpriteRenderer spriteRend;
         private bool canDestroy;
+
+        [SerializeField] private Animator _anim;
 
         #endregion Variables
 
@@ -60,13 +64,14 @@ namespace Brackeys2026
         #region Custom Methods
 
         public void AssignStats(BulletHellSO a_stats) {
+            _currentStats = a_stats;
             //attack = a_stats.Attack;
             //movement = a_stats.Movement;
             _maxHealth = a_stats.Health;
             _currentHealth = _maxHealth;
 
             moveSpeed = a_stats.MoveSpeed;
-            attackSpeed = a_stats.AttackSpeed;
+            attackSpeed = a_stats.FireRate;
             projectile = a_stats.Projectile;
 
             movement = a_stats.Movement switch
@@ -84,6 +89,8 @@ namespace Brackeys2026
                 BHDifficulties.Advance => gameObject.AddComponent<BHAttack>(),
                 _ => gameObject.AddComponent<BHAttack>()
             };
+
+            _anim.runtimeAnimatorController = a_stats.Anim;
         }
 
         private void EnableDestroyOnLeaveScreen() {

@@ -23,7 +23,11 @@ namespace Brackeys2026
         internal override void Fire() {
             base.Fire();
 
-            ObjectPoolManager.SpawnObject(_enemy.projectile, transform.position, Quaternion.identity);
+            GameObject spawnedObj = ObjectPoolManager.SpawnObject(_enemy.projectile, transform.position, Quaternion.identity);
+
+            if (spawnedObj.TryGetComponent(out BHProjectiles projectile)) {
+                projectile.SetupProjectile(_enemy._currentStats);
+            }
         }
 
         #endregion Custom Methods

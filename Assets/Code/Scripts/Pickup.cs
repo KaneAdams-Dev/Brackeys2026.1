@@ -2,21 +2,17 @@ using UnityEngine;
 
 namespace Brackeys2026
 {
-    [RequireComponent(typeof(BHEnemies))]
-    public class BHAttack : MonoBehaviour
+    public class Pickup : MonoBehaviour, IInteractable
     {
         #region Variables
-
-        [SerializeField] protected BHEnemies _enemy;
-        //[SerializeField] protected GameObject _projectile;
 
         #endregion Variables
 
         #region Unity Methods
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
-        virtual protected void Start() {
-            _enemy = GetComponent<BHEnemies>();
+        private void Start() {
+
         }
 
         // Update is called once per frame
@@ -28,7 +24,7 @@ namespace Brackeys2026
 
         #region Custom Methods
 
-        virtual internal void Fire() {
+        public void Interact() {
 
         }
 

@@ -32,8 +32,8 @@ namespace Brackeys2026
 
         #region Custom Methods
 
-        virtual public void TakeDamage() {
-            _currentHealth--;
+        virtual public void TakeDamage(int a_damage = 1) {
+            _currentHealth -= a_damage;
 
             if (_currentHealth <= 0) {
                 DefeatEntity();

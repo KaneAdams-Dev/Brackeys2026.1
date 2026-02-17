@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,6 +36,8 @@ namespace Brackeys2026
         [SerializeField] private LayerMask _groundPoundLayers;
 
         internal PlayerStates _currentState;
+
+        public static event Action<int> OnHealthChange;
 
         #endregion Variables
 
@@ -102,6 +105,11 @@ namespace Brackeys2026
 
             _currentState = a_newState;
             animator.UpdateAnimation(_currentState.ToString());
+        }
+
+        public override void TakeDamage(int a_damage = 1) {
+            base.TakeDamage(a_damage);
+            OnHealthChange?.Invoke(_currentHealth);
         }
 
         protected override void DefeatEntity() {

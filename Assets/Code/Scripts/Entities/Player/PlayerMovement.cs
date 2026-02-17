@@ -154,7 +154,6 @@ namespace Brackeys2026
             player.UpdateState(PlayerStates.GroundPoundFall);
 
             player.isGroundPounding = true;
-            _rbody.linearVelocityX = 0f;
             _rbody.AddForceY(_groundPoundForce, ForceMode2D.Impulse);
             SetMoveDirection(0f);
 

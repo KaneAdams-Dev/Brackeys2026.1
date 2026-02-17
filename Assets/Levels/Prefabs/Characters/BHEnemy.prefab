@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8450497897506515854}
   - component: {fileID: 6500342169732949340}
   - component: {fileID: 4873959714222269370}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1423024161
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7583421314123152515, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 5149569488349581276}
   - component: {fileID: 1385367235754874685}
   - component: {fileID: 7910748967887955073}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BHEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,6 +164,7 @@ MonoBehaviour:
   attack: {fileID: 0}
   movement: {fileID: 0}
   spriteRend: {fileID: 6500342169732949340}
+  _anim: {fileID: 4873959714222269370}
 --- !u!50 &7910748967887955073
 Rigidbody2D:
   serializedVersion: 5

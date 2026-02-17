@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7703e161002f9654f85403981313e469, type: 3}
-  m_Name: BulletHellSO
+  m_Name: Jellyfish
   m_EditorClassIdentifier: Assembly-CSharp::Brackeys2026.BulletHellSO
-  _icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  _health: 50
+  _icon: {fileID: -4931524378033680948, guid: afa7d073f63a2fc4eaf089f83371ffcb, type: 3}
+  _anim: {fileID: 9100000, guid: f11caeab02ddade40bdd095b686cf5e5, type: 2}
+  _health: 5
   _attack: 0
-  _attackSpeed: 1
+  _fireRate: 1
   _projectile: {fileID: 3834722508509491278, guid: ffb30681c072a564088a9faa88554d9a, type: 3}
+  _projectileAnim: {fileID: 9100000, guid: da81a161938434d4cab6c32e4b90aa5f, type: 2}
+  _projectileSpeed: 80
+  _projectileStrength: 5
   _movement: 0
-  _moveSpeed: 5
+  _moveSpeed: 15

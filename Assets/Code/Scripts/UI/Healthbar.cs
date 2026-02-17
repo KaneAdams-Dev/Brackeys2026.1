@@ -15,10 +15,23 @@ namespace Brackeys2026
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start() {
+
+        }
+
+        // This function is called when the object becomes enabled and active
+        private void OnEnable() {
             foreach (var heart in _hearts) {
                 heart.SetActive(true);
             }
+
+            Player.OnHealthChange += OnHealthUpdate;
         }
+
+        // This function is called when the behaviour becomes disabled or inactive
+        private void OnDisable() {
+            Player.OnHealthChange -= OnHealthUpdate;
+        }
+
 
         // Update is called once per frame
         private void Update() {

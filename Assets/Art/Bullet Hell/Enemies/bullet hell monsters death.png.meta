@@ -1,46 +1,52 @@
 fileFormatVersion: 2
-guid: 1f675358f6900b548a70ab712fcdc12e
+guid: afa7d073f63a2fc4eaf089f83371ffcb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3585973546763514866
-    second: bullet_hell_monsters1_0
+      213: 6827877949279729941
+    second: bullet hell monsters death_0
   - first:
-      213: 2126855389562948110
-    second: bullet_hell_monsters1_1
+      213: -4325669524640813698
+    second: bullet hell monsters death_1
   - first:
-      213: -6574870213745500810
-    second: bullet_hell_monsters1_2
+      213: -4931524378033680948
+    second: bullet hell monsters death_2
   - first:
-      213: -6681382202619926091
-    second: bullet_hell_monsters1_3
+      213: -2296217451615066676
+    second: bullet hell monsters death_3
   - first:
-      213: 7583421314123152515
-    second: bullet_hell_monsters1_4
+      213: 5452052760302481159
+    second: bullet hell monsters death_4
   - first:
-      213: -7726847666904675917
-    second: bullet_hell_monsters1_5
+      213: 5951261851833431491
+    second: bullet hell monsters death_5
   - first:
-      213: -852295479170939023
-    second: bullet_hell_monsters1_6
+      213: -8161317823741945142
+    second: bullet hell monsters death_6
   - first:
-      213: -6929004498933053786
-    second: bullet_hell_monsters1_7
+      213: 2175343452050463116
+    second: bullet hell monsters death_7
   - first:
-      213: 4442970081744042053
-    second: bullet_hell_monsters1_8
+      213: -5001562635871063183
+    second: bullet hell monsters death_8
   - first:
-      213: -5847731962603794068
-    second: bullet_hell_monsters1_9
+      213: 705314438403671941
+    second: bullet hell monsters death_9
   - first:
-      213: -4103624931530206322
-    second: bullet_hell_monsters1_10
+      213: -694997754610291296
+    second: bullet hell monsters death_10
   - first:
-      213: -2626245689468963098
-    second: bullet_hell_monsters1_11
+      213: 465855355288213881
+    second: bullet hell monsters death_11
   - first:
-      213: 5728786310824652539
-    second: bullet_hell_monsters1_12
+      213: 7681839708205284904
+    second: bullet hell monsters death_12
+  - first:
+      213: 1171398929892059458
+    second: bullet hell monsters death_13
+  - first:
+      213: 6961778982594552713
+    second: bullet hell monsters death_14
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -136,7 +142,139 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bullet_hell_monsters1_0
+      name: bullet hell monsters death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5197a88b1de71ce50800000000000000
+      internalID: 6827877949279729941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet hell monsters death_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 320
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7d2d085c7228f3c0800000000000000
+      internalID: -4325669524640813698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet hell monsters death_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 320
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd8f1ed4b4bf8bb0800000000000000
+      internalID: -4931524378033680948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet hell monsters death_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc56e65c4623220e0800000000000000
+      internalID: -2296217451615066676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet hell monsters death_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 256
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70f648a691599ab40800000000000000
+      internalID: 5452052760302481159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet hell monsters death_5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c57dd38f11279250800000000000000
+      internalID: 5951261851833431491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet hell monsters death_6
       rect:
         serializedVersion: 2
         x: 0
@@ -151,14 +289,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e0c863bfe001c3ec0800000000000000
-      internalID: -3585973546763514866
+      spriteID: aca1cc80eac2dbe80800000000000000
+      internalID: -8161317823741945142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_hell_monsters1_1
+      name: bullet hell monsters death_7
       rect:
         serializedVersion: 2
         x: 48
@@ -173,14 +311,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e0a468f45bb148d10800000000000000
-      internalID: 2126855389562948110
+      spriteID: c8990fb185f503e10800000000000000
+      internalID: 2175343452050463116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_hell_monsters1_2
+      name: bullet hell monsters death_8
       rect:
         serializedVersion: 2
         x: 96
@@ -195,36 +333,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 67d1761306e51c4a0800000000000000
-      internalID: -6574870213745500810
+      spriteID: 173f9073841e69ab0800000000000000
+      internalID: -5001562635871063183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_hell_monsters1_3
-      rect:
-        serializedVersion: 2
-        x: 161
-        y: 240
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5b9e8344946f643a0800000000000000
-      internalID: -6681382202619926091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bullet_hell_monsters1_4
+      name: bullet hell monsters death_9
       rect:
         serializedVersion: 2
         x: 0
@@ -239,14 +355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 38cbf6aa189bd3960800000000000000
-      internalID: 7583421314123152515
+      spriteID: 587410caeb7c9c900800000000000000
+      internalID: 705314438403671941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_hell_monsters1_5
+      name: bullet hell monsters death_10
       rect:
         serializedVersion: 2
         x: 48
@@ -261,14 +377,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b9479c4cf8b4c490800000000000000
-      internalID: -7726847666904675917
+      spriteID: 0ad62c4793fda56f0800000000000000
+      internalID: -694997754610291296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_hell_monsters1_6
+      name: bullet hell monsters death_11
       rect:
         serializedVersion: 2
         x: 96
@@ -283,14 +399,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 177485007c90c24f0800000000000000
-      internalID: -852295479170939023
+      spriteID: 979daa83afc077600800000000000000
+      internalID: 465855355288213881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_hell_monsters1_7
+      name: bullet hell monsters death_12
       rect:
         serializedVersion: 2
         x: 0
@@ -305,18 +421,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a60302ae1b37df90800000000000000
-      internalID: -6929004498933053786
+      spriteID: 82ef015b3806b9a60800000000000000
+      internalID: 7681839708205284904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_hell_monsters1_8
+      name: bullet hell monsters death_13
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 48
+        y: 64
         width: 48
         height: 64
       alignment: 0
@@ -327,118 +443,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 548ba0edfb998ad30800000000000000
-      internalID: 4442970081744042053
+      spriteID: 2492d72de15a14010800000000000000
+      internalID: 1171398929892059458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_hell_monsters1_9
+      name: bullet hell monsters death_14
       rect:
         serializedVersion: 2
-        x: 177
-        y: 240
-        width: 15
-        height: 15
+        x: 96
+        y: 64
+        width: 48
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: afa94f549ae90ba4f840684b0a4f6c4c
-      internalID: -5847731962603794068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bullet_hell_monsters1_10
-      rect:
-        serializedVersion: 2
-        x: 161
-        y: 222
-        width: 14
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b5869f5b51abe54fbde8b32fa344d5c
-      internalID: -4103624931530206322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bullet_hell_monsters1_11
-      rect:
-        serializedVersion: 2
-        x: 177
-        y: 222
-        width: 14
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15627d3de41847e469db9592b6709e12
-      internalID: -2626245689468963098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bullet_hell_monsters1_12
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 194
-        width: 9
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ec2134cb023987438c329478f7ce8ca
-      internalID: 5728786310824652539
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bullet_hell_monsters1_13
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 194
-        width: 9
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12aad7e408e1d8a40b4896ef6b8e861f
-      internalID: -1371074216
+      spriteID: 983245e79153d9060800000000000000
+      internalID: 6961778982594552713
       vertices: []
       indices: 
       edges: []
@@ -447,7 +475,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8b46926b622933544bf3e9acbdc1639c
+    spriteID: 0b9dbd1feb69c0249a8b118ce81a4c68
     internalID: 0
     vertices: []
     indices: 
@@ -457,22 +485,23 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":48.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":6.0},"gridSpriteSize":{"x":48.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      bullet_hell_monsters1_0: -3585973546763514866
-      bullet_hell_monsters1_1: 2126855389562948110
-      bullet_hell_monsters1_10: -4103624931530206322
-      bullet_hell_monsters1_11: -2626245689468963098
-      bullet_hell_monsters1_12: 5728786310824652539
-      bullet_hell_monsters1_13: -1371074216
-      bullet_hell_monsters1_2: -6574870213745500810
-      bullet_hell_monsters1_3: -6681382202619926091
-      bullet_hell_monsters1_4: 7583421314123152515
-      bullet_hell_monsters1_5: -7726847666904675917
-      bullet_hell_monsters1_6: -852295479170939023
-      bullet_hell_monsters1_7: -6929004498933053786
-      bullet_hell_monsters1_8: 4442970081744042053
-      bullet_hell_monsters1_9: -5847731962603794068
+      bullet hell monsters death_0: 6827877949279729941
+      bullet hell monsters death_1: -4325669524640813698
+      bullet hell monsters death_10: -694997754610291296
+      bullet hell monsters death_11: 465855355288213881
+      bullet hell monsters death_12: 7681839708205284904
+      bullet hell monsters death_13: 1171398929892059458
+      bullet hell monsters death_14: 6961778982594552713
+      bullet hell monsters death_2: -4931524378033680948
+      bullet hell monsters death_3: -2296217451615066676
+      bullet hell monsters death_4: 5452052760302481159
+      bullet hell monsters death_5: 5951261851833431491
+      bullet hell monsters death_6: -8161317823741945142
+      bullet hell monsters death_7: 2175343452050463116
+      bullet hell monsters death_8: -5001562635871063183
+      bullet hell monsters death_9: 705314438403671941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

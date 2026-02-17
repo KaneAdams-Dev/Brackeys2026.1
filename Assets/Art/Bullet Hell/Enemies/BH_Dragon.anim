@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BH_Pink_Bullet
+  m_Name: BH_Dragon
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -4103624931530206322, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
+      value: {fileID: 2126855389562948110, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
     - time: 0.5
-      value: {fileID: -2626245689468963098, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
+      value: {fileID: -7726847666904675917, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
     - time: 1
-      value: {fileID: -4103624931530206322, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
+      value: {fileID: 2126855389562948110, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,9 +48,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -4103624931530206322, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
-    - {fileID: -2626245689468963098, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
-    - {fileID: -4103624931530206322, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
+    - {fileID: 2126855389562948110, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
+    - {fileID: -7726847666904675917, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
+    - {fileID: 2126855389562948110, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

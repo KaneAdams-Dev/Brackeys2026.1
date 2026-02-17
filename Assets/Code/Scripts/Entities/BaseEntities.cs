@@ -7,7 +7,7 @@ namespace Brackeys2026
         #region Variables
 
         protected int _currentHealth;
-        [SerializeField] protected int _maxHealth = 100;
+        [SerializeField] protected int _maxHealth = 3;
 
         #endregion Variables
 
@@ -32,12 +32,16 @@ namespace Brackeys2026
 
         #region Custom Methods
 
-        public void TakeDamage(int amount) {
-            _currentHealth -= amount;
+        virtual public void TakeDamage() {
+            _currentHealth--;
 
             if (_currentHealth <= 0) {
-                Destroy(gameObject);
+                DefeatEntity();
             }
+        }
+
+        virtual protected void DefeatEntity() {
+            ObjectPoolManager.ReturnToPool(gameObject);
         }
 
         #endregion Custom Methods

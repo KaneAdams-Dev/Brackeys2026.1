@@ -2,6 +2,6 @@ namespace Brackeys2026
 {
     public interface IDamagable
     {
-        void TakeDamage(int amount);
+        void TakeDamage();
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Brackeys2026
 {
@@ -101,6 +102,10 @@ namespace Brackeys2026
 
             _currentState = a_newState;
             animator.UpdateAnimation(_currentState.ToString());
+        }
+
+        protected override void DefeatEntity() {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         #endregion Custom Methods

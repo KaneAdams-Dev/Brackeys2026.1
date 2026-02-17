@@ -21,8 +21,8 @@ namespace Brackeys2026
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start() {
             _screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-            _objectWidth = _enemyPrefab.GetComponent<Renderer>().bounds.size.x / 2;
-            _objectHeight = _enemyPrefab.GetComponent<Renderer>().bounds.size.y / 2;
+            _objectWidth = _enemyPrefab.GetComponentInChildren<Renderer>().bounds.size.x / 2;
+            _objectHeight = _enemyPrefab.GetComponentInChildren<Renderer>().bounds.size.y / 2;
 
             InvokeRepeating(nameof(SpawnEnemies), spawnRate, spawnRate);
         }

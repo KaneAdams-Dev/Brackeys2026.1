@@ -30,6 +30,12 @@ namespace Brackeys2026
             _player.animator.canInterupt = true;
 
             _player.isGroundPounding = false;
+            _player.UpdateState(PlayerStates.Idle);
+        }
+
+        public void EndGroundPound() {
+            _player.animator.canInterupt = true;
+            _player.movement.StopGroundPound();
         }
 
         #endregion Custom Methods

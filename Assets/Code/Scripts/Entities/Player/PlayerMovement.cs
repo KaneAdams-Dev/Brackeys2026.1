@@ -46,14 +46,10 @@ namespace Brackeys2026
                 _coyoteTimeCounter = _coyoteTime;
                 canDoubleJump = true;
                 isDoubleJumping = false;
-                StopGroundPound();
+                //StopGroundPound();
 
-                if (player._currentState == PlayerStates.Fall || player._currentState == PlayerStates.Jump) {
-                    player.UpdateState(PlayerStates.Land);
-                    player.animator.canInterupt = false;
-                } else if (player._currentState == PlayerStates.GroundPoundFall) {
+                if (player.isGroundPounding && player._currentState == PlayerStates.GroundPoundFall) {
                     player.UpdateState(PlayerStates.GroundPoundLand);
-                    player.animator.canInterupt = false;
                 }
 
             } else {
@@ -81,8 +77,8 @@ namespace Brackeys2026
         }
 
         internal void Move() {
-            if (player.isGroundPounding) {
-                _moveDir = 0;
+            if (player.isGroundPounding || player._currentState == PlayerStates.Land) {
+                return;
             }
 
             _rbody.linearVelocityX = _moveDir * player.moveSpeed;
@@ -121,12 +117,15 @@ namespace Brackeys2026
         }
 
         internal void Jump() {
+            if (player.isGroundPounding) return;
+
             if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f) {
+                player.UpdateState(PlayerStates.Jump);
+
                 _jumpBufferCounter = 0f;
 
                 player.isJumping = true;
                 _rbody.linearVelocityY = _jumpForce;
-                player.UpdateState(PlayerStates.Jump);
             }
         }
 
@@ -152,21 +151,33 @@ namespace Brackeys2026
                 return;
             }
 
+            player.UpdateState(PlayerStates.GroundPoundFall);
+
             player.isGroundPounding = true;
+            _rbody.linearVelocityX = 0f;
             _rbody.AddForceY(_groundPoundForce, ForceMode2D.Impulse);
             SetMoveDirection(0f);
-
-            player.UpdateState(PlayerStates.GroundPoundFall);
 
             //Invoke(nameof(StopGroundPound), 0.5f);
         }
 
         internal void StopGroundPound() {
             player.isGroundPounding = false;
+            _rbody.linearVelocity = Vector3.zero;
+
+            float currentInput = player.inputHandler.horizontalInput;
+
+            if (currentInput > 0.01f) {
+                SetMoveDirection(currentInput);
+                player.UpdateState(PlayerStates.Run);
+            } else {
+                _moveDir = 0;
+                player.UpdateState(PlayerStates.Idle);
+            }
         }
 
         internal bool CheckIfGrounded() {
-            Debug.DrawRay(transform.position, Vector2.down * _raySize, Color.red, 0.2f);
+            Debug.DrawRay(transform.position, Vector2.down * _raySize, Color.blue, 0.2f);
             return Physics2D.Raycast(transform.position, Vector2.down, _raySize, _jumpableLayers);
         }
 

@@ -12,6 +12,9 @@ namespace Brackeys2026
         public PlayerActions playerActions;
         private PlayerActions.MetroidvaniaActions _mapActions;
 
+
+        internal float horizontalInput;
+
         #endregion Variables
 
         #region Unity Methods
@@ -77,11 +80,13 @@ namespace Brackeys2026
         }
 
         private void OnMovementPerformed(InputAction.CallbackContext context) {
-            player.movement.SetMoveDirection(context.ReadValue<float>());
+            horizontalInput = context.ReadValue<float>();
+            player.movement.SetMoveDirection(horizontalInput);
         }
 
         private void OnMovementCanceled(InputAction.CallbackContext context) {
-            player.movement.SetMoveDirection(0f);
+            horizontalInput = 0;
+            player.movement.SetMoveDirection(horizontalInput);
         }
 
         private void OnJumpPerformed(InputAction.CallbackContext context) {

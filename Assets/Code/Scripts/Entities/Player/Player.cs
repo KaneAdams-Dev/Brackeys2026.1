@@ -90,6 +90,8 @@ namespace Brackeys2026
 
         internal void UpdateState(PlayerStates a_newState) {
             if (_currentState == a_newState) return;
+            if (!animator.canInterupt) return;
+
 
             if (_currentState == PlayerStates.Land || _currentState == PlayerStates.GroundPoundLand) {
                 if (a_newState != PlayerStates.Idle) {

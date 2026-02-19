@@ -15,6 +15,14 @@ namespace Brackeys2026
         GroundPoundLand
     }
 
+    public enum ToolsAndAbilities
+    {
+        Sword,
+        Gun,
+        Pickaxe,
+        Seed
+    }
+
     public class Player : BaseEntities
     {
         #region Variables
@@ -39,14 +47,24 @@ namespace Brackeys2026
 
         public static event Action<int> OnHealthChange;
 
+        private bool hasSeed;
+
         #endregion Variables
 
         #region Unity Methods
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        private void Start() {
+        // Awake is called when the script instance is being loaded
+        override protected void Awake() {
+            base.Awake();
+
             isJumping = false;
             isGroundPounding = false;
+            hasSeed = false;
+        }
+
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        private void Start() {
+
         }
 
         // Update is called once per frame
@@ -114,6 +132,34 @@ namespace Brackeys2026
 
         protected override void DefeatEntity() {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        public void EquipToolOrAbility(ToolsAndAbilities a_item) {
+
+            switch (a_item) {
+                case ToolsAndAbilities.Sword:
+                    inputHandler.EnableSword();
+                    inputHandler.EnableGroundPound();
+
+                    break;
+
+                case ToolsAndAbilities.Gun:
+                    inputHandler.EnableGun();
+
+                    break;
+
+                case ToolsAndAbilities.Pickaxe:
+
+                    break;
+
+                case ToolsAndAbilities.Seed:
+                    hasSeed = true;
+
+                    break;
+
+                default:
+                    break;
+            }
         }
 
         #endregion Custom Methods

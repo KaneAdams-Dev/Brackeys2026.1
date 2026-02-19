@@ -30,6 +30,13 @@ namespace Brackeys2026
         [SerializeField] private float _fallGravity;
         [SerializeField] private float _jumpGravity;
 
+        public Vector2 boxSize = new Vector2(1f, 0.8f);
+        public float castDistance = 1.5f;
+        //public LayerMask interactableLayer;
+        public Vector3 pivotOffet = new Vector3(0, 2.5f, 0);
+
+        public Vector2 facingDirection = Vector2.right;
+
 
         #endregion Variables
 
@@ -68,6 +75,16 @@ namespace Brackeys2026
             Jump();
         }
 
+        // Implement this OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn
+        private void OnDrawGizmos() {
+            Vector3 center = transform.position + (Vector3)(facingDirection.normalized * castDistance * 0.5f) + pivotOffet;
+            Vector3 size = new Vector3(boxSize.x, boxSize.y, 0f);
+
+            Gizmos.DrawWireCube(center, size);
+        }
+
+
+
         #endregion Unity Methods
 
         #region Custom Methods
@@ -85,9 +102,11 @@ namespace Brackeys2026
 
             if (!player.isGroundPounding) {
                 if (_moveDir < 0) {
-                    player.animator.transform.rotation = Quaternion.Euler(0, 180, 0);
+                    //player.animator.transform.rotation = Quaternion.Euler(0, 180, 0);
+                    player.animator.transform.localScale = new Vector2(-1, 1);
                 } else if (_moveDir > 0) {
-                    player.animator.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    //player.animator.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    player.animator.transform.localScale = new Vector2(1, 1);
                 }
             }
 
@@ -154,6 +173,7 @@ namespace Brackeys2026
             player.UpdateState(PlayerStates.GroundPoundFall);
 
             player.isGroundPounding = true;
+            _rbody.linearVelocityX = 0f;
             _rbody.AddForceY(_groundPoundForce, ForceMode2D.Impulse);
             SetMoveDirection(0f);
 
@@ -177,7 +197,8 @@ namespace Brackeys2026
 
         internal bool CheckIfGrounded() {
             Debug.DrawRay(transform.position, Vector2.down * _raySize, Color.blue, 0.2f);
-            return Physics2D.Raycast(transform.position, Vector2.down, _raySize, _jumpableLayers);
+            //return Physics2D.Raycast(transform.position, Vector2.down, _raySize, _jumpableLayers);
+            return Physics2D.BoxCast(transform.position + pivotOffet, boxSize, 0f, Vector2.zero, castDistance, _jumpableLayers);
         }
 
         #endregion Custom Methods

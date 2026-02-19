@@ -16,7 +16,7 @@ TagManager:
   - Player Projectile
   - Enemy
   - Player
-  - 
+  - Interactables
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3233163593
+    locked: 0
+  - name: UI
+    uniqueID: 2702673219
     locked: 0
   m_RenderingLayers:
   - Default

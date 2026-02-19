@@ -136,6 +136,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""26e9e10c-f21d-4393-b736-4bb6fd329f21"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -188,7 +197,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""id"": ""bad66bda-c367-4b06-b0c2-7dece4a61b12"",
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""AxisDeadzone,Normalize(max=1)"",
                     ""groups"": "";Controller"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
@@ -199,7 +208,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""id"": ""207f349e-503f-4093-8340-6f1f7e87d1df"",
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""AxisDeadzone,Normalize(max=1)"",
                     ""groups"": "";Controller"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
@@ -264,7 +273,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""0e51a432-f3a7-441a-9907-cf05a03b70c5"",
                     ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap"",
                     ""processors"": """",
                     ""groups"": "";Controller"",
                     ""action"": ""Sword Attack"",
@@ -290,6 +299,28 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Controller"",
                     ""action"": ""Gun Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c9edd249-c359-4ed7-83a8-44a5138f794c"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8bc81687-651a-4f73-a1ad-b66f0468a107"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": "";Controller"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -333,6 +364,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Metroidvania_GroundPound = m_Metroidvania.FindAction("Ground Pound", throwIfNotFound: true);
         m_Metroidvania_SwordAttack = m_Metroidvania.FindAction("Sword Attack", throwIfNotFound: true);
         m_Metroidvania_GunAttack = m_Metroidvania.FindAction("Gun Attack", throwIfNotFound: true);
+        m_Metroidvania_Interact = m_Metroidvania.FindAction("Interact", throwIfNotFound: true);
     }
 
     ~@PlayerActions()
@@ -418,6 +450,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Metroidvania_GroundPound;
     private readonly InputAction m_Metroidvania_SwordAttack;
     private readonly InputAction m_Metroidvania_GunAttack;
+    private readonly InputAction m_Metroidvania_Interact;
     /// <summary>
     /// Provides access to input actions defined in input action map "Metroidvania".
     /// </summary>
@@ -449,6 +482,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Metroidvania/GunAttack".
         /// </summary>
         public InputAction @GunAttack => m_Wrapper.m_Metroidvania_GunAttack;
+        /// <summary>
+        /// Provides access to the underlying input action "Metroidvania/Interact".
+        /// </summary>
+        public InputAction @Interact => m_Wrapper.m_Metroidvania_Interact;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -490,6 +527,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @GunAttack.started += instance.OnGunAttack;
             @GunAttack.performed += instance.OnGunAttack;
             @GunAttack.canceled += instance.OnGunAttack;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         /// <summary>
@@ -516,6 +556,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @GunAttack.started -= instance.OnGunAttack;
             @GunAttack.performed -= instance.OnGunAttack;
             @GunAttack.canceled -= instance.OnGunAttack;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         /// <summary>
@@ -617,5 +660,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnGunAttack(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

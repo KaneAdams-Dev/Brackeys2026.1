@@ -2,11 +2,11 @@ using UnityEngine;
 
 namespace Brackeys2026
 {
-    public class Pickup : MonoBehaviour, IInteractable
+    public class SwordInStone : Pickup, IInteractable
     {
         #region Variables
 
-        [SerializeField] protected ToolsAndAbilities _pickedUpItem;
+        [SerializeField] private GameObject _sword;
 
         #endregion Variables
 
@@ -26,13 +26,12 @@ namespace Brackeys2026
 
         #region Custom Methods
 
-        virtual public void Interact() {
+        override public void Interact(Player a_player) {
+            if (_sword.activeInHierarchy) {
+                _sword.SetActive(false);
+            }
 
-        }
-
-        virtual public void Interact(Player a_player) {
-            a_player.EquipToolOrAbility(_pickedUpItem);
-            Destroy(gameObject);
+            base.Interact(a_player);
         }
 
         #endregion Custom Methods

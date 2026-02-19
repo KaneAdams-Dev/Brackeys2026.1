@@ -9,6 +9,8 @@ namespace Brackeys2026
         [SerializeField] private Transform _objectToFollow;
         [SerializeField] private float _lerp = 1f;
 
+        [SerializeField] private Vector3 _cameraOffset;
+
         #endregion Variables
 
         #region Unity Methods
@@ -28,7 +30,7 @@ namespace Brackeys2026
                 return;
             }
 
-            Vector3 targetPos = new Vector3(_objectToFollow.position.x, _objectToFollow.position.y, transform.position.z);
+            Vector3 targetPos = new Vector3(_objectToFollow.position.x, _objectToFollow.position.y, transform.position.z) + _cameraOffset;
             transform.position = Vector3.Lerp(transform.position, targetPos, _lerp);
         }
 

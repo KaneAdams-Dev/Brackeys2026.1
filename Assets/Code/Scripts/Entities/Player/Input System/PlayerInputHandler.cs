@@ -15,6 +15,15 @@ namespace Brackeys2026
 
         internal float horizontalInput;
 
+        private bool _isInteracting;
+
+        public Vector2 boxSize = new Vector2(1f, 0.8f);
+        public float castDistance = 1.5f;
+        public LayerMask interactableLayer;
+        public Vector3 pivotOffet = new Vector3(0, 2.5f, 0);
+
+        public Vector2 facingDirection = Vector2.right;
+
         #endregion Variables
 
         #region Unity Methods
@@ -25,6 +34,8 @@ namespace Brackeys2026
             _mapActions = playerActions.Metroidvania;
 
             ColourLogger.RegisterColour(this, "cyan");
+
+            _isInteracting = false;
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -44,6 +55,7 @@ namespace Brackeys2026
             if (Keyboard.current.hKey.wasPressedThisFrame) {
                 EnableSword();
             }
+
         }
 
         // This function is called when the object becomes enabled and active
@@ -54,6 +66,22 @@ namespace Brackeys2026
         // This function is called when the behaviour becomes disabled or inactive
         private void OnDisable() {
             DisableInputs();
+        }
+
+        // Implement this OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn
+        private void OnDrawGizmos() {
+            Gizmos.color = Color.yellow;
+
+            //if (_isInteracting) {
+            //    ColourLogger.Log(this, "Is Interacting");
+            //}
+
+            //Gizmos.DrawWireCube(transform.position, (transform.right * (player.animator.transform.position.x < 0f ? -1 : 1)));
+
+            Vector3 center = transform.position + (Vector3)(new Vector2(player.animator.transform.localScale.x, 0).normalized * castDistance * 0.5f) + pivotOffet;
+            Vector3 size = new Vector3(boxSize.x, boxSize.y, 0f);
+
+            Gizmos.DrawWireCube(center, size);
         }
 
         #endregion Unity Methods
@@ -68,6 +96,9 @@ namespace Brackeys2026
 
             _mapActions.Jump.performed += OnJumpPerformed;
             _mapActions.Jump.canceled += OnJumpReleased;
+
+            _mapActions.Interact.performed += OnInteractPerformed;
+            _mapActions.Interact.canceled += OnInteractCanceled;
         }
 
         private void DisableInputs() {
@@ -76,6 +107,9 @@ namespace Brackeys2026
 
             _mapActions.Jump.performed -= OnJumpPerformed;
             _mapActions.Jump.canceled -= OnJumpReleased;
+
+            _mapActions.Interact.performed -= OnInteractPerformed;
+            _mapActions.Interact.canceled -= OnInteractCanceled;
 
             _mapActions.GroundPound.performed -= OnGroundPoundPerformed;
             _mapActions.GroundPound.canceled -= OnGroundPoundReleased;
@@ -105,7 +139,32 @@ namespace Brackeys2026
             player.movement.ResetJumpTime();
         }
 
-        private void EnableGroundPound() {
+        private void OnInteractPerformed(InputAction.CallbackContext context) {
+            ColourLogger.Log(this, "Interact Pressed");
+            _isInteracting = true;
+            //Physics2D.BoxCast(transform.position, new Vector2(2, 5), 0f, transform.right, 0.25f);
+
+            //RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, Vector2.right, 0, Vector2.zero);
+            //foreach (RaycastHit2D hit in hits) {
+            //    ColourLogger.Log(this, $"I hit: {hit.transform.gameObject.name}");
+            //}
+            //if (hit.transform.gameObject.TryGetComponent(out IInteractable interact)) {
+            //    interact.Interact();
+            //    ColourLogger.Log(this, $"Hit{}")
+            //}
+
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position + pivotOffet, boxSize, 0f, new Vector2(player.animator.transform.localScale.x, 0).normalized, castDistance, interactableLayer);
+            if (hit.collider != null) {
+                ColourLogger.Log(this, $"Interacting with{hit.transform.name}");
+                hit.transform.GetComponent<IInteractable>()?.Interact(player);
+            }
+        }
+
+        private void OnInteractCanceled(InputAction.CallbackContext context) {
+            _isInteracting = false;
+        }
+
+        internal void EnableGroundPound() {
             _mapActions.GroundPound.performed += OnGroundPoundPerformed;
             _mapActions.GroundPound.canceled += OnGroundPoundReleased;
         }
@@ -123,8 +182,9 @@ namespace Brackeys2026
             //player.movement.StopGroundPound();
         }
 
-        private void EnableSword() {
+        internal void EnableSword() {
             _mapActions.SwordAttack.performed += OnSwordAttackPerformed;
+            player.animator.EquipSword();
         }
 
 
@@ -133,10 +193,11 @@ namespace Brackeys2026
         }
 
         private void OnSwordAttackPerformed(InputAction.CallbackContext context) {
+            ColourLogger.Log(this, "Sword Attack Pressed");
             player.animator.EquipSword();
         }
 
-        private void EnableGun() {
+        internal void EnableGun() {
             _mapActions.GunAttack.performed += OnGunAttackPerformed;
         }
 

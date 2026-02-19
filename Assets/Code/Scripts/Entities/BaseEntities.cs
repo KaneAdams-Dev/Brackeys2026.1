@@ -14,7 +14,7 @@ namespace Brackeys2026
         #region Unity Methods
 
         // Awake is called when the script instance is being loaded
-        private void Awake() {
+        virtual protected void Awake() {
             _currentHealth = _maxHealth;
         }
 

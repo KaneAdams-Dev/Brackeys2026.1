@@ -47,6 +47,7 @@ namespace Brackeys2026
         internal PlayerStates _currentState;
 
         public static event Action<int> OnHealthChange;
+        public static event Action OnSeedPickup;
 
         internal bool canAttack;
 
@@ -161,6 +162,7 @@ namespace Brackeys2026
 
                 case ToolsAndAbilities.Seed:
                     hasSeed = true;
+                    OnSeedPickup?.Invoke();
 
                     break;
 

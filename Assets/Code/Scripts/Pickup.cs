@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Brackeys2026
@@ -7,6 +8,8 @@ namespace Brackeys2026
         #region Variables
 
         [SerializeField] protected ToolsAndAbilities _pickedUpItem;
+
+        public static event Action OnPickup;
 
         #endregion Variables
 
@@ -32,6 +35,11 @@ namespace Brackeys2026
 
         virtual public void Interact(Player a_player) {
             a_player.EquipToolOrAbility(_pickedUpItem);
+
+            if (_pickedUpItem != ToolsAndAbilities.Seed) {
+                OnPickup?.Invoke();
+            }
+
             Destroy(gameObject);
         }
 

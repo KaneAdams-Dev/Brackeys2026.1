@@ -114,6 +114,9 @@ namespace Brackeys2026
             _mapActions.GroundPound.performed -= OnGroundPoundPerformed;
             _mapActions.GroundPound.canceled -= OnGroundPoundReleased;
 
+            DisableGun();
+            DisableSword();
+
             _mapActions.Disable();
         }
 

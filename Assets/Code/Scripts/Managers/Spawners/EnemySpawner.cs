@@ -39,13 +39,14 @@ namespace Brackeys2026
                 return;
             }
 
-            spawnY = (_screenBounds.y + _objectHeight) + 5;
+            spawnY = (_screenBounds.y + _objectHeight) + 2;
             wave = 1;
             enemiesAlive = 1;
 
             //GameObject spawnedObj = Instantiate(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);
             GameObject spawnedObj = ObjectPoolManager.SpawnObject(_enemyPrefab, new Vector2(0, spawnY), _enemyPrefab.transform.rotation);//Instantiate(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);
             if (spawnedObj.TryGetComponent(out BHEnemies enemy)) {
+                enemy.isNormalEnemy = false;
                 enemy.AssignStats(_firstEnemy);
             } else {
                 ColourLogger.LogWarning(this, "This GameObject is not an enemy");
@@ -84,6 +85,7 @@ namespace Brackeys2026
             enemiesAlive--;
 
             if (enemiesAlive <= 0) {
+                ColourLogger.Log(this, "Spawning Enemies...");
                 wave++;
 
                 if (wave == 5) {
@@ -108,11 +110,12 @@ namespace Brackeys2026
                 return;
             }
 
-            float randomX = Random.Range(_screenBounds.x - _objectWidth, _screenBounds.x * -1 + _objectWidth);
+            float randomX = Random.Range(_screenBounds.x + _objectWidth - 5f, _screenBounds.x * -1 + _objectWidth + 5f);
 
             //GameObject spawnedObj = Instantiate(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);
             GameObject spawnedObj = ObjectPoolManager.SpawnObject(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);//Instantiate(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);
             if (spawnedObj.TryGetComponent(out BHEnemies enemy)) {
+                enemy.isNormalEnemy = true;
                 enemy.AssignStats(_enemyStats[Random.Range(0, _enemyStats.Length)]);
 
             } else {
@@ -128,6 +131,7 @@ namespace Brackeys2026
             float spawnY = (_screenBounds.y + _objectHeight) + 5;
             GameObject spawnedObj = ObjectPoolManager.SpawnObject(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);//Instantiate(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);
             if (spawnedObj.TryGetComponent(out BHEnemies enemy)) {
+                enemy.isNormalEnemy = false;
                 enemy.AssignStats(_boss);
 
             } else {

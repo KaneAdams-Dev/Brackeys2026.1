@@ -10,13 +10,18 @@ namespace Brackeys2026
         [SerializeField] protected BHEnemies _enemy;
         //[SerializeField] protected Rigidbody2D _rbdy;
 
-        [SerializeField] protected Vector2 _targetPosition;
+        [SerializeField] internal Vector2 _targetPosition;
 
         private Vector2 _screenBounds;
 
         #endregion Variables
 
         #region Unity Methods
+
+        private void Awake() {
+            _targetPosition = new Vector2(0f, 5f);
+
+        }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         virtual protected void Start() {

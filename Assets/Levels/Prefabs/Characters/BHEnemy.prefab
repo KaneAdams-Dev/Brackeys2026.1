@@ -181,6 +181,7 @@ MonoBehaviour:
   movement: {fileID: 0}
   spriteRend: {fileID: 6500342169732949340}
   _anim: {fileID: 7666066397493775363}
+  isNormalEnemy: 0
 --- !u!61 &355214767781579959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,7 +198,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 640
+    m_Bits: 704
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -249,8 +250,8 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4

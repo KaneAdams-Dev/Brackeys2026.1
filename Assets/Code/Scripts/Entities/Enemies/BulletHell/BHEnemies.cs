@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Brackeys2026
 {
@@ -21,7 +22,7 @@ namespace Brackeys2026
         internal float moveSpeed;
 
         [SerializeField] internal SpriteRenderer spriteRend;
-        private bool canDestroy;
+        private bool _isReleased;
 
         [SerializeField] private BHEnemyAnimator _anim;
 
@@ -29,13 +30,15 @@ namespace Brackeys2026
 
         public static event Action OnDeath;
 
+        public bool isNormalEnemy;
+
         #endregion Variables
 
         #region Unity Methods
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start() {
-            canDestroy = false;
+            _isReleased = false;
         }
 
         //// Update is called once per frame
@@ -55,6 +58,7 @@ namespace Brackeys2026
             //AssignStats(_defaultStats);
             //Invoke(nameof(EnableDestroyOnLeaveScreen), 2f);
             _anim.ChangeAnimation("Idle");
+            _isReleased = false;
         }
 
         // This function is called when the behaviour becomes disabled or inactive
@@ -83,8 +87,8 @@ namespace Brackeys2026
             movement = a_stats.Movement switch
             {
                 BHDifficulties.Basic => gameObject.AddComponent<BHBasicMovement>(),
-                BHDifficulties.Inter => gameObject.AddComponent<BHMovement>(),
-                BHDifficulties.Advance => gameObject.AddComponent<BHMovement>(),
+                BHDifficulties.Inter => gameObject.AddComponent<BHAdvanceMovement>(),
+                BHDifficulties.Advance => gameObject.AddComponent<BHBossMovement>(),
                 _ => gameObject.AddComponent<BHMovement>()
             };
 
@@ -99,21 +103,30 @@ namespace Brackeys2026
             _anim.controller.runtimeAnimatorController = a_stats.Anim;
 
             _droppableItem = a_stats.DroppableItem;
+
+            if (isNormalEnemy) {
+                movement._targetPosition = new Vector2(0f, Random.Range(5f, 15f));
+            }
         }
 
         private void EnableDestroyOnLeaveScreen() {
-            canDestroy = true;
+            _isReleased = true;
         }
 
         protected override void DefeatEntity() {
+            if (_isReleased) return;
+
+            _isReleased = true;
+
             if (_droppableItem != null) {
                 ObjectPoolManager.SpawnObject(_droppableItem, transform.position, _droppableItem.transform.rotation);
                 _droppableItem = null;
             }
 
+            ColourLogger.Log(this, "Destroying enemies");
+
             Destroy(movement);
             Destroy(attack);
-            canDestroy = false;
 
             OnDeath?.Invoke();
             _anim.ChangeAnimation("Death");

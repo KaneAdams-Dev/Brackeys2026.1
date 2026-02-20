@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7703e161002f9654f85403981313e469, type: 3}
-  m_Name: Jellyfish
+  m_Name: Eye 1
   m_EditorClassIdentifier: Assembly-CSharp::Brackeys2026.BulletHellSO
-  _icon: {fileID: -4931524378033680948, guid: afa7d073f63a2fc4eaf089f83371ffcb, type: 3}
-  _anim: {fileID: 9100000, guid: f11caeab02ddade40bdd095b686cf5e5, type: 2}
-  _health: 3
+  _icon: {fileID: -3585973546763514866, guid: 1f675358f6900b548a70ab712fcdc12e, type: 3}
+  _anim: {fileID: 9100000, guid: 6489a38217a5ca44cba01324a9640086, type: 2}
+  _health: 1
   _attack: 0
-  _fireRate: 1
+  _fireRate: 4
   _projectile: {fileID: 3834722508509491278, guid: ffb30681c072a564088a9faa88554d9a, type: 3}
-  _projectileAnim: {fileID: 9100000, guid: da81a161938434d4cab6c32e4b90aa5f, type: 2}
-  _projectileSpeed: 25
-  _projectileStrength: 3
+  _projectileAnim: {fileID: 9100000, guid: 5995341c44e2e364c856648e6d655e98, type: 2}
+  _projectileSpeed: 15
+  _projectileStrength: 1
   _movement: 0
-  _moveSpeed: 15
-  _droppableItem: {fileID: 0}
+  _moveSpeed: 5
+  _droppableItem: {fileID: 7996265305851437694, guid: 6ef484348dda23f4ab865cc78a4d1897, type: 3}

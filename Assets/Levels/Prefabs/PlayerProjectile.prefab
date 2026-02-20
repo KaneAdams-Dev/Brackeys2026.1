@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 267585643550405387}
   - component: {fileID: 1599141667763285271}
   - component: {fileID: 6007627987474861456}
-  - component: {fileID: 8920513342625566450}
   - component: {fileID: 9200086019835367653}
   - component: {fileID: -7380431716043965580}
-  m_Layer: 7
-  m_Name: BHProjectile
+  - component: {fileID: -3088666457949880170}
+  m_Layer: 8
+  m_Name: PlayerProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,9 +80,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1423024161
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 1697347889
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -116,27 +116,11 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &8920513342625566450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3834722508509491278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ab1102ad610c0c40aee3ff7bef2d649, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Brackeys2026.BHProjectiles
-  _rbdy: {fileID: 6007627987474861456}
-  spriteRend: {fileID: 1599141667763285271}
-  _anim: {fileID: -7380431716043965580}
-  _collider: {fileID: 9200086019835367653}
 --- !u!58 &9200086019835367653
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -153,7 +137,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -183,7 +167,7 @@ Animator:
   m_GameObject: {fileID: 3834722508509491278}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5995341c44e2e364c856648e6d655e98, type: 2}
+  m_Controller: {fileID: 9100000, guid: ac1325db3ec59ef4893f7e587d71506b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -195,3 +179,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3088666457949880170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834722508509491278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3de4805b20d19042a8da8a54e231238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Brackeys2026.PlayerProjectiles
+  _rbdy: {fileID: 6007627987474861456}
+  spriteRend: {fileID: 1599141667763285271}
+  _anim: {fileID: -7380431716043965580}
+  _collider: {fileID: 9200086019835367653}

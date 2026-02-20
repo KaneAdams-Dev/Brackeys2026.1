@@ -51,5 +51,8 @@ namespace Brackeys2026
         [SerializeField] private float _moveSpeed;
         public float MoveSpeed => _moveSpeed;
 
+        [Space(10)]
+        [SerializeField] private GameObject _droppableItem;
+        public GameObject DroppableItem => _droppableItem;
     }
 }

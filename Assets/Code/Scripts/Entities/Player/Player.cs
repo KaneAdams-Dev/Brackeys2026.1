@@ -12,7 +12,8 @@ namespace Brackeys2026
         Fall,
         Land,
         GroundPoundFall,
-        GroundPoundLand
+        GroundPoundLand,
+        SwordAttack
     }
 
     public enum ToolsAndAbilities
@@ -47,7 +48,12 @@ namespace Brackeys2026
 
         public static event Action<int> OnHealthChange;
 
+        internal bool canAttack;
+
         private bool hasSeed;
+
+        [SerializeField] private Transform _gun;
+        [SerializeField] private GameObject _projectile;
 
         #endregion Variables
 
@@ -60,6 +66,7 @@ namespace Brackeys2026
             isJumping = false;
             isGroundPounding = false;
             hasSeed = false;
+            canAttack = true;
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -110,19 +117,19 @@ namespace Brackeys2026
 
         #region Custom Methods
 
-        internal void UpdateState(PlayerStates a_newState) {
+        internal void UpdateState(PlayerStates a_newState, int a_layer = 0) {
             if (_currentState == a_newState) return;
             if (!animator.canInterupt) return;
 
 
-            if (_currentState == PlayerStates.Land || _currentState == PlayerStates.GroundPoundLand) {
-                if (a_newState != PlayerStates.Idle) {
+            //if (_currentState == PlayerStates.Land || _currentState == PlayerStates.GroundPoundLand) {
+            //    if (a_newState != PlayerStates.Idle) {
 
-                }
-            }
+            //    }
+            //}
 
             _currentState = a_newState;
-            animator.UpdateAnimation(_currentState.ToString());
+            animator.UpdateAnimation(_currentState.ToString(), a_layer);
         }
 
         public override void TakeDamage(int a_damage = 1) {
@@ -160,6 +167,12 @@ namespace Brackeys2026
                 default:
                     break;
             }
+        }
+
+        internal void ShootGun() {
+            GameObject spawned = ObjectPoolManager.SpawnObject(_projectile, _gun.position, Quaternion.identity);
+            //Instantiate(_projectile, _gun.position, Quaternion.identity);
+            //spawned.GetComponent<PlayerProjectiles>().SetupProjectile(, 1, 1);
         }
 
         #endregion Custom Methods

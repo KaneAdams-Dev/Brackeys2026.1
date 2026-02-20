@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Brackeys2026
@@ -22,7 +23,11 @@ namespace Brackeys2026
         [SerializeField] internal SpriteRenderer spriteRend;
         private bool canDestroy;
 
-        [SerializeField] private Animator _anim;
+        [SerializeField] private BHEnemyAnimator _anim;
+
+        private GameObject _droppableItem;
+
+        public static event Action OnDeath;
 
         #endregion Variables
 
@@ -33,29 +38,28 @@ namespace Brackeys2026
             canDestroy = false;
         }
 
-        // Update is called once per frame
-        private void Update() {
-            if (!canDestroy) {
-                return;
-            }
+        //// Update is called once per frame
+        //private void Update() {
+        //    if (!canDestroy) {
+        //        return;
+        //    }
 
-            if (!spriteRend.isVisible) {
-                //Destroy(gameObject);
-                ObjectPoolManager.ReturnToPool(gameObject);
-            }
-        }
+        //    if (!spriteRend.isVisible) {
+        //        //Destroy(gameObject);
+        //        ObjectPoolManager.ReturnToPool(gameObject);
+        //    }
+        //}
 
         // This function is called when the object becomes enabled and active
         private void OnEnable() {
             //AssignStats(_defaultStats);
-            Invoke(nameof(EnableDestroyOnLeaveScreen), 2f);
+            //Invoke(nameof(EnableDestroyOnLeaveScreen), 2f);
+            _anim.ChangeAnimation("Idle");
         }
 
         // This function is called when the behaviour becomes disabled or inactive
         private void OnDisable() {
-            Destroy(movement);
-            Destroy(attack);
-            canDestroy = false;
+
         }
 
 
@@ -64,6 +68,8 @@ namespace Brackeys2026
         #region Custom Methods
 
         public void AssignStats(BulletHellSO a_stats) {
+            ColourLogger.Log(this, "Stats assigning");
+
             _currentStats = a_stats;
             //attack = a_stats.Attack;
             //movement = a_stats.Movement;
@@ -90,11 +96,30 @@ namespace Brackeys2026
                 _ => gameObject.AddComponent<BHAttack>()
             };
 
-            _anim.runtimeAnimatorController = a_stats.Anim;
+            _anim.controller.runtimeAnimatorController = a_stats.Anim;
+
+            _droppableItem = a_stats.DroppableItem;
         }
 
         private void EnableDestroyOnLeaveScreen() {
             canDestroy = true;
+        }
+
+        protected override void DefeatEntity() {
+            if (_droppableItem != null) {
+                ObjectPoolManager.SpawnObject(_droppableItem, transform.position, _droppableItem.transform.rotation);
+                _droppableItem = null;
+            }
+
+            Destroy(movement);
+            Destroy(attack);
+            canDestroy = false;
+
+            OnDeath?.Invoke();
+            _anim.ChangeAnimation("Death");
+
+            //base.DefeatEntity();
+
         }
 
         #endregion Custom Methods

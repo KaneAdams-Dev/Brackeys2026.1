@@ -2,24 +2,34 @@ using UnityEngine;
 
 namespace Brackeys2026
 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(BHEnemies))]
+    [RequireComponent(typeof(BHEnemies))]
     public class BHMovement : MonoBehaviour
     {
         #region Variables
 
         [SerializeField] protected BHEnemies _enemy;
-        [SerializeField] protected Rigidbody2D _rbdy;
+        //[SerializeField] protected Rigidbody2D _rbdy;
+
+        [SerializeField] protected Vector2 _targetPosition;
+
+        private Vector2 _screenBounds;
 
         #endregion Variables
 
         #region Unity Methods
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
-        private void Start() {
+        virtual protected void Start() {
             _enemy = GetComponent<BHEnemies>();
-            _rbdy = GetComponent<Rigidbody2D>();
+            //_rbdy = GetComponent<Rigidbody2D>();
 
-            _rbdy.gravityScale = 0f;
+            //_rbdy.gravityScale = 0f;
+
+            _screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+
+            float twoThirds = (_screenBounds.y / 3);
+            ColourLogger.Log(this, _screenBounds.y.ToString());
+
         }
 
         // Update is called once per frame

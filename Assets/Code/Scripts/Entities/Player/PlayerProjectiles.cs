@@ -2,8 +2,7 @@ using UnityEngine;
 
 namespace Brackeys2026
 {
-    [RequireComponent(typeof(SpriteRenderer))]
-    public class BHProjectiles : MonoBehaviour
+    public class PlayerProjectiles : MonoBehaviour
     {
         #region Variables
 
@@ -15,8 +14,8 @@ namespace Brackeys2026
 
         private bool _isReleased;
 
-        private float _moveSpeed;
-        private int _attackStrength;
+        private float _moveSpeed = 10;
+        private int _attackStrength = 1;
 
         #endregion Variables
 
@@ -38,6 +37,8 @@ namespace Brackeys2026
         private void OnEnable() {
             _isReleased = false;
             _collider.enabled = true;
+
+            Invoke(nameof(DespawnProjectile), 20f);
         }
 
         // This function is called when the behaviour becomes disabled or inactive
@@ -45,16 +46,14 @@ namespace Brackeys2026
 
         }
 
-
-
         // Update is called once per frame
         private void Update() {
             if (_isReleased) return;
 
-            if (!spriteRend.isVisible) {
-                _isReleased = true;
-                ObjectPoolManager.ReturnToPool(gameObject);
-            }
+            //if (!spriteRend.isVisible) {
+            //    _isReleased = true;
+            //    ObjectPoolManager.ReturnToPool(gameObject);
+            //}
         }
 
         // This function is called every fixed framerate frame, if the MonoBehaviour is enabled
@@ -62,12 +61,13 @@ namespace Brackeys2026
             Move();
         }
 
-        // OnCollisionEnter2D is called when this collider2D/rigidbody2D has begun touching another rigidbody2D/collider2D (2D physics only)
+        // OnCollisionEnter2D is called when this collider2D/rigidbody2D has begun touching another rigidbody2D/collider2D(2D physics only)
         private void OnCollisionEnter2D(Collision2D collision) {
             if (_isReleased) return;
 
             _rbdy.linearVelocityY = 0f;
             _collider.enabled = false;
+
             if (collision.gameObject.TryGetComponent(out IDamagable entity)) {
                 entity.TakeDamage(_attackStrength);
             }
@@ -77,18 +77,41 @@ namespace Brackeys2026
             ObjectPoolManager.ReturnToPool(gameObject);
         }
 
+        //// OnTriggerEnter2D is called when the Collider2D other enters the trigger (2D physics only)
+        //private void OnTriggerEnter2D(Collider2D collision) {
+        //    if (_isReleased) return;
+
+        //    _rbdy.linearVelocityY = 0f;
+        //    _collider.enabled = false;
+
+        //    if (collision.gameObject.TryGetComponent(out IDamagable entity)) {
+        //        entity.TakeDamage(_attackStrength);
+        //    }
+
+        //    _isReleased = true;
+
+        //    ObjectPoolManager.ReturnToPool(gameObject);
+        //}
+
         #endregion Unity Methods
 
         #region Custom Methods
 
-        internal void SetupProjectile(BulletHellSO a_stats) {
-            _anim.runtimeAnimatorController = a_stats.ProjectileAnim;
-            _moveSpeed = a_stats.ProjectileSpeed;
-            _attackStrength = a_stats.ProjectileStrength;
-        }
+        //internal void SetupProjectile(RuntimeAnimatorController a_anim, float a_speed, int a_strength) {
+        //    _anim.runtimeAnimatorController = a_anim;
+        //    _moveSpeed = a_speed;
+        //    _attackStrength = a_strength;
+        //}
 
         private void Move() {
-            _rbdy.linearVelocityY = _moveSpeed * -1f;
+            _rbdy.linearVelocityY = _moveSpeed * 1f;
+        }
+
+        private void DespawnProjectile() {
+            if (_isReleased) return;
+
+            _isReleased = true;
+            ObjectPoolManager.ReturnToPool(gameObject);
         }
 
         #endregion Custom Methods

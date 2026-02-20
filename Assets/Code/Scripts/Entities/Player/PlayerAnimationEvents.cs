@@ -38,6 +38,14 @@ namespace Brackeys2026
             _player.movement.StopGroundPound();
         }
 
+        public void EndSwordAttack() {
+            ColourLogger.Log(this, "return to idle");
+            _player.canAttack = true;
+            //_player.UpdateState(PlayerStates.Idle, (int)AnimationLayers.Sword);
+            _player.animator.Unarm();
+            _player.animator.UpdateAnimation("Base", (int)AnimationLayers.Sword);
+        }
+
         #endregion Custom Methods
     }
 }

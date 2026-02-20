@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8450497897506515854}
   - component: {fileID: 6500342169732949340}
   - component: {fileID: 4873959714222269370}
+  - component: {fileID: 7666066397493775363}
   m_Layer: 9
   m_Name: EnemyGFX
   m_TagString: Untagged
@@ -113,6 +114,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7666066397493775363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3317755329322255975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f96612981d692542b46e36c0e033477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Brackeys2026.BHEnemyAnimator
+  _enemy: {fileID: 1385367235754874685}
+  controller: {fileID: 4873959714222269370}
 --- !u!1 &8166061562438087802
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +138,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5149569488349581276}
   - component: {fileID: 1385367235754874685}
-  - component: {fileID: 7910748967887955073}
+  - component: {fileID: 355214767781579959}
+  - component: {fileID: 8912658245194669887}
   m_Layer: 9
   m_Name: BHEnemy
   m_TagString: Untagged
@@ -164,8 +180,54 @@ MonoBehaviour:
   attack: {fileID: 0}
   movement: {fileID: 0}
   spriteRend: {fileID: 6500342169732949340}
-  _anim: {fileID: 4873959714222269370}
---- !u!50 &7910748967887955073
+  _anim: {fileID: 7666066397493775363}
+--- !u!61 &355214767781579959
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8166061562438087802}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 640
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.022624493, y: 0.79185534}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 4.1221724, y: 4.7556562}
+  m_EdgeRadius: 0
+--- !u!50 &8912658245194669887
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -190,5 +252,5 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
+  m_CollisionDetection: 0
+  m_Constraints: 7

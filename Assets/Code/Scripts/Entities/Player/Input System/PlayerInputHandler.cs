@@ -155,7 +155,6 @@ namespace Brackeys2026
 
             RaycastHit2D hit = Physics2D.BoxCast(transform.position + pivotOffet, boxSize, 0f, new Vector2(player.animator.transform.localScale.x, 0).normalized, castDistance, interactableLayer);
             if (hit.collider != null) {
-                ColourLogger.Log(this, $"Interacting with{hit.transform.name}");
                 hit.transform.GetComponent<IInteractable>()?.Interact(player);
             }
         }
@@ -193,8 +192,14 @@ namespace Brackeys2026
         }
 
         private void OnSwordAttackPerformed(InputAction.CallbackContext context) {
-            ColourLogger.Log(this, "Sword Attack Pressed");
+            if (!player.canAttack) return;
+            if (player.isGroundPounding) return;
+
             player.animator.EquipSword();
+            player.UpdateState(PlayerStates.SwordAttack, (int)AnimationLayers.Sword);
+            player.canAttack = false;
+
+            Invoke(nameof(AllowAttack), 0.5f);
         }
 
         internal void EnableGun() {
@@ -206,7 +211,15 @@ namespace Brackeys2026
         }
 
         private void OnGunAttackPerformed(InputAction.CallbackContext context) {
+            if (!player.canAttack) return;
+
             player.animator.EquipGun();
+
+            player.ShootGun();
+        }
+
+        private void AllowAttack() {
+            player.canAttack = true;
         }
 
         #endregion Custom Methods

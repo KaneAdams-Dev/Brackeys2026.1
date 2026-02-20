@@ -3,6 +3,14 @@ using UnityEngine;
 
 namespace Brackeys2026
 {
+    public enum AnimationLayers
+    {
+        Base,
+        Unarmed,
+        Sword,
+        GunUp,
+    }
+
     public class PlayerAnimator : MonoBehaviour
     {
         #region Variables
@@ -41,12 +49,12 @@ namespace Brackeys2026
 
         #region Custom Methods
 
-        internal void UpdateAnimation(string a_newClip) {
+        internal void UpdateAnimation(string a_newClip, int a_animLayer = 0) {
             if (_currentClip == a_newClip) return;
 
-            ColourLogger.Log(this, a_newClip);
+            //ColourLogger.Log(this, a_newClip);
             _currentClip = a_newClip;
-            _anim.Play(_currentClip);
+            _anim.Play(_currentClip, a_animLayer);
         }
 
         internal void EquipSword() {

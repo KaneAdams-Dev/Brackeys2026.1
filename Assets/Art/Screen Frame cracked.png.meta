@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 9c1c09fb0a41d504fa0895cf36b8f31e
+guid: 9a47361c2c20f55459db8d0a3777448c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3468017002235184065
-    second: Screen Frame Farm_0
-  - first:
-      213: -6921507932562149668
-    second: Screen Frame Farm_1
+      213: 3916972600239029240
+    second: Screen Frame cracked_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,67 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screen Frame Farm_0
+      name: Screen Frame cracked_0
       rect:
         serializedVersion: 2
-        x: 420
-        y: 803
-        width: 817
+        x: 12
+        y: 19
+        width: 275
         height: 52
-      alignment: 9
-      pivot: {x: 0.9985287, y: 0.0075249304}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1c34e35d61fd02030800000000000000
-      internalID: 3468017002235184065
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Screen Frame Farm_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 71
-        width: 1282
-        height: 721
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cdea591053dd1ff90800000000000000
-      internalID: -6921507932562149668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Screen Frame Farm_2
-      rect:
-        serializedVersion: 2
-        x: 248
-        y: 67
-        width: 160
-        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 43ad25ada8813ec48906aeb60b9c0064
-      internalID: 949669318
+      spriteID: 8fb7f20b3d1eb5630800000000000000
+      internalID: 3916972600239029240
       vertices: []
       indices: 
       edges: []
@@ -172,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 78d1159b95bd5f84aa4e0dc7f9ae88fe
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -182,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Screen Frame Farm_0: 3468017002235184065
-      Screen Frame Farm_1: -6921507932562149668
-      Screen Frame Farm_2: 949669318
+      Screen Frame cracked_0: 3916972600239029240
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

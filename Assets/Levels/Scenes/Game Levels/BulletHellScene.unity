@@ -3094,11 +3094,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3798686015855204404, guid: 8039f716d9c8e9f4aaee852116977db5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5412395927391748138, guid: 8039f716d9c8e9f4aaee852116977db5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 6361354743048668272, guid: 8039f716d9c8e9f4aaee852116977db5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6657127849792174089, guid: 8039f716d9c8e9f4aaee852116977db5, type: 3}
       propertyPath: m_Pivot.x

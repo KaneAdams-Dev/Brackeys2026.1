@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: d4c89b964bf3db34fa3c7379d120c102
+guid: 7befce13737a9e34882b31abcb276bb3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 305186016063236015
-    second: Screen Damage_0
+      213: 6947483819587923926
+    second: Boards_0000_0
   - first:
-      213: -7484894967743175789
-    second: Screen Damage_1
+      213: 4237312470563152176
+    second: Boards_0000_1
   - first:
-      213: 1300679683601972554
-    second: Screen Damage_2
+      213: -4949940894745929955
+    second: Boards_0000_2
   - first:
-      213: -4869255443430775553
-    second: Screen Damage_3
-  - first:
-      213: 4497791829465362862
-    second: Screen Damage_4
-  - first:
-      213: -6587080877463236827
-    second: Screen Damage_5
-  - first:
-      213: 3146838052558866901
-    second: Screen Damage_6
-  - first:
-      213: -8270037451560318932
-    second: Screen Damage_7
+      213: 3490919097833672474
+    second: Boards_0000_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screen Damage_0
+      name: Boards_0000_0
       rect:
         serializedVersion: 2
-        x: 39
+        x: 14
         y: 179
-        width: 232
-        height: 52
+        width: 235
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa7addd801d3c3400800000000000000
-      internalID: 305186016063236015
+      spriteID: 6dfef4d79bb6a6060800000000000000
+      internalID: 6947483819587923926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Screen Damage_7
+      name: Boards_0000_1
       rect:
         serializedVersion: 2
-        x: 39
-        y: 71
-        width: 232
-        height: 52
+        x: 14
+        y: 130
+        width: 235
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,30 +146,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c28029c11ccea3d80800000000000000
-      internalID: -8270037451560318932
+      spriteID: 031ef32ed35fdca30800000000000000
+      internalID: 4237312470563152176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Screen Damage_1
+      name: Boards_0000_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 71
-        width: 48
-        height: 52
+        x: 14
+        y: 73
+        width: 235
+        height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1f9e5111fa335944fa165224ca3d4e8b
-      internalID: -7484894967743175789
+      spriteID: d175d7d6bf64e4bb0800000000000000
+      internalID: -4949940894745929955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boards_0000_3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 15
+        width: 235
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1fc00e7c6c327030800000000000000
+      internalID: 3490919097833672474
       vertices: []
       indices: 
       edges: []
@@ -190,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9141b506ac3e2ed4aa8d6d8f9895d542
+    spriteID: 45e53cd19f0b6534494605a4397c3435
     internalID: 0
     vertices: []
     indices: 
@@ -200,14 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Screen Damage_0: 305186016063236015
-      Screen Damage_1: -7484894967743175789
-      Screen Damage_2: 1300679683601972554
-      Screen Damage_3: -4869255443430775553
-      Screen Damage_4: 4497791829465362862
-      Screen Damage_5: -6587080877463236827
-      Screen Damage_6: 3146838052558866901
-      Screen Damage_7: -8270037451560318932
+      Boards_0000_0: 6947483819587923926
+      Boards_0000_1: 4237312470563152176
+      Boards_0000_2: -4949940894745929955
+      Boards_0000_3: 3490919097833672474
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

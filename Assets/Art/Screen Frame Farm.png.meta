@@ -1,31 +1,13 @@
 fileFormatVersion: 2
-guid: d4c89b964bf3db34fa3c7379d120c102
+guid: 9c1c09fb0a41d504fa0895cf36b8f31e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 305186016063236015
-    second: Screen Damage_0
+      213: 3468017002235184065
+    second: Screen Frame Farm_0
   - first:
-      213: -7484894967743175789
-    second: Screen Damage_1
-  - first:
-      213: 1300679683601972554
-    second: Screen Damage_2
-  - first:
-      213: -4869255443430775553
-    second: Screen Damage_3
-  - first:
-      213: 4497791829465362862
-    second: Screen Damage_4
-  - first:
-      213: -6587080877463236827
-    second: Screen Damage_5
-  - first:
-      213: 3146838052558866901
-    second: Screen Damage_6
-  - first:
-      213: -8270037451560318932
-    second: Screen Damage_7
+      213: -6921507932562149668
+    second: Screen Frame Farm_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,13 +103,35 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screen Damage_0
+      name: Screen Frame Farm_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 179
-        width: 232
+        x: 420
+        y: 803
+        width: 817
         height: 52
+      alignment: 9
+      pivot: {x: 0.9985287, y: 0.0075249304}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c34e35d61fd02030800000000000000
+      internalID: 3468017002235184065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Frame Farm_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 71
+        width: 1282
+        height: 721
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,52 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa7addd801d3c3400800000000000000
-      internalID: 305186016063236015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Screen Damage_7
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 71
-        width: 232
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c28029c11ccea3d80800000000000000
-      internalID: -8270037451560318932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Screen Damage_1
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 71
-        width: 48
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f9e5111fa335944fa165224ca3d4e8b
-      internalID: -7484894967743175789
+      spriteID: cdea591053dd1ff90800000000000000
+      internalID: -6921507932562149668
       vertices: []
       indices: 
       edges: []
@@ -190,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9141b506ac3e2ed4aa8d6d8f9895d542
+    spriteID: 78d1159b95bd5f84aa4e0dc7f9ae88fe
     internalID: 0
     vertices: []
     indices: 
@@ -200,14 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Screen Damage_0: 305186016063236015
-      Screen Damage_1: -7484894967743175789
-      Screen Damage_2: 1300679683601972554
-      Screen Damage_3: -4869255443430775553
-      Screen Damage_4: 4497791829465362862
-      Screen Damage_5: -6587080877463236827
-      Screen Damage_6: 3146838052558866901
-      Screen Damage_7: -8270037451560318932
+      Screen Frame Farm_0: 3468017002235184065
+      Screen Frame Farm_1: -6921507932562149668
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: d4c89b964bf3db34fa3c7379d120c102
+guid: c61c9cdb580341244a110867d867ffcd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 305186016063236015
-    second: Screen Damage_0
+      213: -6189289526238714443
+    second: Particles_0
   - first:
-      213: -7484894967743175789
-    second: Screen Damage_1
+      213: -7699328018653931357
+    second: Particles_1
   - first:
-      213: 1300679683601972554
-    second: Screen Damage_2
+      213: -186343322299716006
+    second: Particles_2
   - first:
-      213: -4869255443430775553
-    second: Screen Damage_3
-  - first:
-      213: 4497791829465362862
-    second: Screen Damage_4
-  - first:
-      213: -6587080877463236827
-    second: Screen Damage_5
-  - first:
-      213: 3146838052558866901
-    second: Screen Damage_6
-  - first:
-      213: -8270037451560318932
-    second: Screen Damage_7
+      213: -6285070063975550627
+    second: Particles_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,67 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screen Damage_0
+      name: Particles_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 179
-        width: 232
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fa7addd801d3c3400800000000000000
-      internalID: 305186016063236015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Screen Damage_7
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 71
-        width: 232
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c28029c11ccea3d80800000000000000
-      internalID: -8270037451560318932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Screen Damage_1
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 71
-        width: 48
-        height: 52
+        x: 42
+        y: 101
+        width: 44
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1f9e5111fa335944fa165224ca3d4e8b
-      internalID: -7484894967743175789
+      spriteID: 5b5ee78d7f93b1aa0800000000000000
+      internalID: -6189289526238714443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particles_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 104
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a89be6b5fd762590800000000000000
+      internalID: -7699328018653931357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particles_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 20
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e2f045cb9f96df0800000000000000
+      internalID: -186343322299716006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particles_3
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 24
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d51bb489312f6c8a0800000000000000
+      internalID: -6285070063975550627
       vertices: []
       indices: 
       edges: []
@@ -190,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9141b506ac3e2ed4aa8d6d8f9895d542
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -200,14 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Screen Damage_0: 305186016063236015
-      Screen Damage_1: -7484894967743175789
-      Screen Damage_2: 1300679683601972554
-      Screen Damage_3: -4869255443430775553
-      Screen Damage_4: 4497791829465362862
-      Screen Damage_5: -6587080877463236827
-      Screen Damage_6: 3146838052558866901
-      Screen Damage_7: -8270037451560318932
+      Particles_0: -6189289526238714443
+      Particles_1: -7699328018653931357
+      Particles_2: -186343322299716006
+      Particles_3: -6285070063975550627
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

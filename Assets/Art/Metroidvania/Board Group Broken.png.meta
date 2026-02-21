@@ -1,31 +1,22 @@
 fileFormatVersion: 2
-guid: d4c89b964bf3db34fa3c7379d120c102
+guid: af07e680c5c4e224e9664094eae8354e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 305186016063236015
-    second: Screen Damage_0
+      213: 4959957450574979370
+    second: Board Group Whole_0
   - first:
-      213: -7484894967743175789
-    second: Screen Damage_1
+      213: 182851997351868172
+    second: Board Group Whole_1
   - first:
-      213: 1300679683601972554
-    second: Screen Damage_2
+      213: 8888030729173899253
+    second: Board Group Whole_2
   - first:
-      213: -4869255443430775553
-    second: Screen Damage_3
+      213: -6622324203974933006
+    second: Board Group Whole_3
   - first:
-      213: 4497791829465362862
-    second: Screen Damage_4
-  - first:
-      213: -6587080877463236827
-    second: Screen Damage_5
-  - first:
-      213: 3146838052558866901
-    second: Screen Damage_6
-  - first:
-      213: -8270037451560318932
-    second: Screen Damage_7
+      213: 8882768259637064451
+    second: Board Group Whole_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,67 +112,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screen Damage_0
+      name: Board Group Broken_1
       rect:
         serializedVersion: 2
-        x: 39
-        y: 179
-        width: 232
-        height: 52
+        x: 118
+        y: 1196
+        width: 935
+        height: 410
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fa7addd801d3c3400800000000000000
-      internalID: 305186016063236015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Screen Damage_7
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 71
-        width: 232
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c28029c11ccea3d80800000000000000
-      internalID: -8270037451560318932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Screen Damage_1
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 71
-        width: 48
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f9e5111fa335944fa165224ca3d4e8b
-      internalID: -7484894967743175789
+      spriteID: 8061c143979c7be468bcbd4eff76fc03
+      internalID: -113421728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Board Group Broken_2
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 674
+        width: 931
+        height: 429
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f744bdc9b03fca408946536d5016e6d
+      internalID: -2092473940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Board Group Broken_3
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 125
+        width: 930
+        height: 399
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ce14aeb277ab1428b0b31f6b2d4519
+      internalID: -538695919
       vertices: []
       indices: 
       edges: []
@@ -190,7 +181,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9141b506ac3e2ed4aa8d6d8f9895d542
+    spriteID: cf9bfc6fb82c76b40a511256e044a45d
     internalID: 0
     vertices: []
     indices: 
@@ -198,16 +189,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Screen Damage_0: 305186016063236015
-      Screen Damage_1: -7484894967743175789
-      Screen Damage_2: 1300679683601972554
-      Screen Damage_3: -4869255443430775553
-      Screen Damage_4: 4497791829465362862
-      Screen Damage_5: -6587080877463236827
-      Screen Damage_6: 3146838052558866901
-      Screen Damage_7: -8270037451560318932
+      Board Group Broken_0: 1697616122
+      Board Group Broken_1: -113421728
+      Board Group Broken_2: -2092473940
+      Board Group Broken_3: -538695919
+      Board Group Broken_4: 2142930360
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

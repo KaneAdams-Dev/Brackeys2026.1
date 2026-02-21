@@ -103,15 +103,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: water_0
+      name: Leaf_2
       rect:
         serializedVersion: 2
         x: 54
         y: 683
         width: 617
         height: 155
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.026713712, y: 0.17017822}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,15 +125,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_1
+      name: Leaf_4
       rect:
         serializedVersion: 2
         x: 719
         y: 693
         width: 490
         height: 110
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.025765805, y: 0.12679277}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -147,15 +147,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_2
+      name: Leaft_1
       rect:
         serializedVersion: 2
         x: 59
         y: 493
         width: 626
         height: 162
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.02361935, y: 0.2274622}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -169,15 +169,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water_3
+      name: Leaft_3
       rect:
         serializedVersion: 2
         x: 702
         y: 520
         width: 567
         height: 147
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.047818623, y: 0.09426693}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -272,10 +272,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      water_0: 8509550459451208454
-      water_1: 3559705528278350927
-      water_2: 1986023103
-      water_3: -2114226496
+      Leaf_2: 8509550459451208454
+      Leaf_4: 3559705528278350927
+      Leaft_1: 1986023103
+      Leaft_3: -2114226496
       water_4: -1756501426
       water_5: -518592449
       water_6: 335890140

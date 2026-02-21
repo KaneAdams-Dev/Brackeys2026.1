@@ -8,6 +8,7 @@ namespace Brackeys2026
         Base,
         Unarmed,
         Sword,
+        SwordAttackLayer,
         GunUp,
     }
 
@@ -22,7 +23,9 @@ namespace Brackeys2026
         internal bool canInterupt;
 
         private int _swordLayer;
+        private int _swordAttackLayer;
         private int _gunLayer;
+        private int _unarmnedLayer;
 
         [Range(0, 1)][SerializeField] private float _layerFadeDuration = 0.5f;
 
@@ -35,7 +38,9 @@ namespace Brackeys2026
             canInterupt = true;
 
             _swordLayer = _anim.GetLayerIndex("Sword");
+            _swordAttackLayer = _anim.GetLayerIndex("SwordAttack");
             _gunLayer = _anim.GetLayerIndex("Gun Up");
+            _unarmnedLayer = _anim.GetLayerIndex("Unarmed");
 
             Unarm();
         }
@@ -57,15 +62,23 @@ namespace Brackeys2026
             _anim.Play(_currentClip, a_animLayer);
         }
 
+        internal void PlaySwordAttack() {
+            //StartCoroutine(FadeInWeaponLayer(_swordAttackLayer, 1f, 0f));
+            _anim.SetLayerWeight(_swordAttackLayer, 1f);
+            _anim.Play("SwordAttack", _swordAttackLayer, 0f);
+        }
+
         internal void EquipSword() {
             //_anim.SetLayerWeight(_gunLayer, 0f);
             //_anim.SetLayerWeight(_swordLayer, 1f);
 
             StartCoroutine(FadeInWeaponLayer(_gunLayer, 0f, _layerFadeDuration));
+            StartCoroutine(FadeInWeaponLayer(_unarmnedLayer, 0f, _layerFadeDuration));
             StartCoroutine(FadeInWeaponLayer(_swordLayer, 1f, _layerFadeDuration));
+            //StartCoroutine(FadeInWeaponLayer(_swordAttackLayer, 0f, _layerFadeDuration));
 
 
-            ColourLogger.Log(this, $"Gun: {_anim.GetLayerWeight(_gunLayer)}, Sword {_anim.GetLayerWeight(_swordLayer)}");
+            //ColourLogger.Log(this, $"Gun: {_anim.GetLayerWeight(_gunLayer)}, Sword {_anim.GetLayerWeight(_swordLayer)}");
         }
 
         internal void EquipGun() {
@@ -73,9 +86,15 @@ namespace Brackeys2026
             //_anim.SetLayerWeight(_gunLayer, 1f);
 
             StartCoroutine(FadeInWeaponLayer(_swordLayer, 0f, _layerFadeDuration));
+            //StartCoroutine(FadeInWeaponLayer(_swordAttackLayer, 0f, _layerFadeDuration));
+            StartCoroutine(FadeInWeaponLayer(_unarmnedLayer, 0f, _layerFadeDuration));
             StartCoroutine(FadeInWeaponLayer(_gunLayer, 1f, _layerFadeDuration));
 
-            ColourLogger.Log(this, $"Gun: {_anim.GetLayerWeight(_gunLayer)}, Sword {_anim.GetLayerWeight(_swordLayer)}");
+            //ColourLogger.Log(this, $"Gun: {_anim.GetLayerWeight(_gunLayer)}, Sword {_anim.GetLayerWeight(_swordLayer)}");
+        }
+
+        internal void StopSwordAttack() {
+            StartCoroutine(FadeInWeaponLayer(_swordAttackLayer, 0f, 0f));
         }
 
         internal void Unarm() {
@@ -84,7 +103,10 @@ namespace Brackeys2026
             //_anim.SetLayerWeight(_swordLayer, 0f);
             StartCoroutine(FadeInWeaponLayer(_swordLayer, 0f, _layerFadeDuration));
 
-            ColourLogger.Log(this, $"Gun: {_anim.GetLayerWeight(_gunLayer)}, Sword {_anim.GetLayerWeight(_swordLayer)}");
+            //StartCoroutine(FadeInWeaponLayer(_swordAttackLayer, 0f, _layerFadeDuration));
+            StartCoroutine(FadeInWeaponLayer(_unarmnedLayer, 1f, _layerFadeDuration));
+
+            //ColourLogger.Log(this, $"Gun: {_anim.GetLayerWeight(_gunLayer)}, Sword {_anim.GetLayerWeight(_swordLayer)}");
         }
 
         IEnumerator FadeInWeaponLayer(int a_layerIndex, float a_targetWeight, float a_duration) {

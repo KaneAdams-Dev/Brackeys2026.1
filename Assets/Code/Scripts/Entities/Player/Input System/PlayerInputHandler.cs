@@ -44,17 +44,7 @@ namespace Brackeys2026
 
         // Update is called once per frame
         private void Update() {
-            if (Keyboard.current.pKey.wasPressedThisFrame) {
-                EnableGroundPound();
-            }
 
-            if (Keyboard.current.qKey.wasPressedThisFrame) {
-                EnableGun();
-            }
-
-            if (Keyboard.current.hKey.wasPressedThisFrame) {
-                EnableSword();
-            }
 
         }
 
@@ -199,8 +189,10 @@ namespace Brackeys2026
             if (player.isGroundPounding) return;
 
             player.animator.EquipSword();
-            player.UpdateState(PlayerStates.SwordAttack, (int)AnimationLayers.Sword);
+            //player.UpdateState(PlayerStates.SwordAttack);
+            player.animator.PlaySwordAttack();
             player.canAttack = false;
+            //player.animator.canInterupt = false;
 
             Invoke(nameof(AllowAttack), 0.5f);
         }

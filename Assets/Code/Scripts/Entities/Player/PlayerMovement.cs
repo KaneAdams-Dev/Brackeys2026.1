@@ -50,14 +50,16 @@ namespace Brackeys2026
         // Update is called once per frame
         private void Update() {
             if (CheckIfGrounded()) {
+                if (player.isGroundPounding && player._currentState == PlayerStates.GroundPoundFall) {
+                    player.UpdateState(PlayerStates.GroundPoundLand);
+                    return;
+                }
                 _coyoteTimeCounter = _coyoteTime;
                 canDoubleJump = true;
                 isDoubleJumping = false;
                 //StopGroundPound();
 
-                if (player.isGroundPounding && player._currentState == PlayerStates.GroundPoundFall) {
-                    player.UpdateState(PlayerStates.GroundPoundLand);
-                }
+
 
             } else {
                 _coyoteTimeCounter -= Time.deltaTime;

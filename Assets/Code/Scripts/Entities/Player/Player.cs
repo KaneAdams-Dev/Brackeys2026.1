@@ -51,10 +51,15 @@ namespace Brackeys2026
 
         internal bool canAttack;
 
-        private bool hasSeed;
+        public bool hasSeed;
+        public bool hasSword;
+        public bool hasGun;
 
         [SerializeField] private Transform _gun;
         [SerializeField] private GameObject _projectile;
+
+        public GameObject _swordGO;
+        public GameObject _gunGO;
 
         #endregion Variables
 
@@ -66,13 +71,27 @@ namespace Brackeys2026
 
             isJumping = false;
             isGroundPounding = false;
-            hasSeed = false;
+            //hasSeed = false;
             canAttack = true;
+
+
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start() {
+            if (hasSword) {
+                inputHandler.EnableSword();
+                inputHandler.EnableGroundPound();
+                _swordGO.SetActive(true);
+            }
 
+            if (hasGun) {
+                inputHandler.EnableGun();
+            }
+
+            if (hasSeed) {
+
+            }
         }
 
         // Update is called once per frame
@@ -146,12 +165,16 @@ namespace Brackeys2026
 
             switch (a_item) {
                 case ToolsAndAbilities.Sword:
+                    hasSword = true;
                     inputHandler.EnableSword();
                     inputHandler.EnableGroundPound();
+
+                    _swordGO.SetActive(true);
 
                     break;
 
                 case ToolsAndAbilities.Gun:
+                    hasGun = true;
                     inputHandler.EnableGun();
 
                     break;

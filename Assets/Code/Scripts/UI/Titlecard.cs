@@ -12,10 +12,10 @@ namespace Brackeys2026
 
         #region Unity Methods
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        private void Start() {
-            Pickup.OnPickup += ShowText;
-        }
+        //// Start is called once before the first execution of Update after the MonoBehaviour is created
+        //private void Start() {
+        //    Pickup.OnPickup += ShowText;
+        //}
 
         // This function is called when the object becomes enabled and active
         private void OnEnable() {

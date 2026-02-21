@@ -5,12 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Levels/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Levels/Scenes/Game Levels/MetroidvaniaScene.unity
+    guid: 4cf71f5e37ccd994d8d478a884c3f9bd
   - enabled: 1
     path: Assets/Levels/Scenes/Game Levels/BulletHellScene.unity
     guid: 02ef67eff7a109c4182b012368075e19
+  - enabled: 1
+    path: Assets/Levels/Scenes/Game Levels/Water.unity
+    guid: 8f532c81bbe3c42449fdc1482bb9dbcb
+  - enabled: 1
+    path: Assets/Levels/Scenes/Game Levels/Farm.unity
+    guid: d6e81fc5639477a4eb1f5bdc02fe17f8
+  - enabled: 1
+    path: Assets/Levels/Scenes/Game Levels/BeanskipScene.unity
+    guid: 51553be55802e1b4f8f906a66138b002
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

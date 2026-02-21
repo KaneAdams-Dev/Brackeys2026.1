@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: afc24feedba23884da8c43f37c06b8aa
+guid: d4c89b964bf3db34fa3c7379d120c102
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4485748185418270254
-    second: Stem_0
+      213: 305186016063236015
+    second: Screen Damage_0
+  - first:
+      213: -7484894967743175789
+    second: Screen Damage_1
+  - first:
+      213: 1300679683601972554
+    second: Screen Damage_2
+  - first:
+      213: -4869255443430775553
+    second: Screen Damage_3
+  - first:
+      213: 4497791829465362862
+    second: Screen Damage_4
+  - first:
+      213: -6587080877463236827
+    second: Screen Damage_5
+  - first:
+      213: 3146838052558866901
+    second: Screen Damage_6
+  - first:
+      213: -8270037451560318932
+    second: Screen Damage_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stem_0
+      name: Screen Damage_0
       rect:
         serializedVersion: 2
-        x: 532
-        y: 556
-        width: 399
-        height: 237
+        x: 39
+        y: 179
+        width: 232
+        height: 52
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,52 +136,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d97a48bacb6fb1c0800000000000000
-      internalID: -4485748185418270254
+      spriteID: fa7addd801d3c3400800000000000000
+      internalID: 305186016063236015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stem_1
+      name: Screen Damage_7
       rect:
         serializedVersion: 2
-        x: 85
-        y: 56
-        width: 260
-        height: 459
+        x: 39
+        y: 71
+        width: 232
+        height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ba93b083d674380499ec6eabafbe2a62
-      internalID: -933645155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stem_2
-      rect:
-        serializedVersion: 2
-        x: 1016
-        y: 0
-        width: 387
-        height: 659
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ff26af2ab5d4a4479e3ca15854cc921
-      internalID: 754399852
+      spriteID: c28029c11ccea3d80800000000000000
+      internalID: -8270037451560318932
       vertices: []
       indices: 
       edges: []
@@ -169,7 +168,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 53e53832417fd924c9b61acb439983c5
+    spriteID: 9141b506ac3e2ed4aa8d6d8f9895d542
     internalID: 0
     vertices: []
     indices: 
@@ -179,9 +178,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stem_0: -4485748185418270254
-      Stem_1: -933645155
-      Stem_2: 754399852
+      Screen Damage_0: 305186016063236015
+      Screen Damage_1: -7484894967743175789
+      Screen Damage_2: 1300679683601972554
+      Screen Damage_3: -4869255443430775553
+      Screen Damage_4: 4497791829465362862
+      Screen Damage_5: -6587080877463236827
+      Screen Damage_6: 3146838052558866901
+      Screen Damage_7: -8270037451560318932
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

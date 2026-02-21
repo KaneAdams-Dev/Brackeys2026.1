@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: afc24feedba23884da8c43f37c06b8aa
+guid: 3449dae48e5ced343848d5dbe2174391
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4485748185418270254
-    second: Stem_0
+      213: -4131832258745836571
+    second: Screen Frame_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,67 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stem_0
+      name: Screen Frame_0
       rect:
         serializedVersion: 2
-        x: 532
-        y: 556
-        width: 399
-        height: 237
+        x: 128
+        y: 71
+        width: 1282
+        height: 721
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d97a48bacb6fb1c0800000000000000
-      internalID: -4485748185418270254
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stem_1
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 56
-        width: 260
-        height: 459
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba93b083d674380499ec6eabafbe2a62
-      internalID: -933645155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stem_2
-      rect:
-        serializedVersion: 2
-        x: 1016
-        y: 0
-        width: 387
-        height: 659
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ff26af2ab5d4a4479e3ca15854cc921
-      internalID: 754399852
+      spriteID: 5eb54f9b378c8a6c0800000000000000
+      internalID: -4131832258745836571
       vertices: []
       indices: 
       edges: []
@@ -169,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 53e53832417fd924c9b61acb439983c5
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -179,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stem_0: -4485748185418270254
-      Stem_1: -933645155
-      Stem_2: 754399852
+      Screen Frame_0: -4131832258745836571
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

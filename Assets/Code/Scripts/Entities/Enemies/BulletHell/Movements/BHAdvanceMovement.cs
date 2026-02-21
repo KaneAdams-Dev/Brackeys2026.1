@@ -49,9 +49,9 @@ namespace Brackeys2026
         }
 
         private void SideStep() {
-            if (transform.position.x > 30) {
+            if (transform.position.x > 20) {
                 _direction = -1;
-            } else if (transform.position.x < -30) {
+            } else if (transform.position.x < -20) {
                 _direction = 1;
             }
 

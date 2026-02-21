@@ -105,7 +105,7 @@ namespace Brackeys2026
             _droppableItem = a_stats.DroppableItem;
 
             if (isNormalEnemy) {
-                movement._targetPosition = new Vector2(0f, Random.Range(5f, 15f));
+                movement._targetPosition = new Vector2(0f, Random.Range(5f, 10f));
             }
         }
 

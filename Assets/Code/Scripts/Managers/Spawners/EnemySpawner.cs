@@ -110,7 +110,7 @@ namespace Brackeys2026
                 return;
             }
 
-            float randomX = Random.Range(_screenBounds.x + _objectWidth - 5f, _screenBounds.x * -1 + _objectWidth + 5f);
+            float randomX = Random.Range(_screenBounds.x + _objectWidth - 10f, _screenBounds.x * -1 + _objectWidth + 10f);
 
             //GameObject spawnedObj = Instantiate(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);
             GameObject spawnedObj = ObjectPoolManager.SpawnObject(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);//Instantiate(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);

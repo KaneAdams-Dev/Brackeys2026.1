@@ -103,9 +103,9 @@ TextureImporter:
       name: Stem_0
       rect:
         serializedVersion: 2
-        x: 532
+        x: 537
         y: 556
-        width: 399
+        width: 386
         height: 237
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -130,7 +130,7 @@ TextureImporter:
         width: 260
         height: 459
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -152,7 +152,7 @@ TextureImporter:
         width: 387
         height: 659
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

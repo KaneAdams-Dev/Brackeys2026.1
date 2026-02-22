@@ -779,6 +779,8 @@ GameObject:
   - component: {fileID: 267171532}
   - component: {fileID: 267171531}
   - component: {fileID: 267171533}
+  - component: {fileID: 267171534}
+  - component: {fileID: 267171535}
   m_Layer: 0
   m_Name: Screen Frame Farm_0
   m_TagString: Untagged
@@ -883,6 +885,67 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &267171534
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267171530}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.22096604, y: 0.21360055}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.9985287, y: 0.0075249304}
+    oldSize: {x: 8.17, y: 0.52}
+    newSize: {x: 8.17, y: 0.52}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.736555, y: 0.5727989}
+  m_EdgeRadius: 0
+--- !u!114 &267171535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267171530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f5f6e6f9494f2f48a5dfc0ab41e9c09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Brackeys2026.FarmCrackedCeiling
+  _anim: {fileID: 267171533}
+  _collider: {fileID: 267171534}
+  _waterSlide: {fileID: 2038329919}
 --- !u!1 &283933413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,6 +2028,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1097002730}
     m_Modifications:
+    - target: {fileID: 2980324826036429888, guid: 41e42fe0751d2fe459559af244d08d6e, type: 3}
+      propertyPath: m_SortingOrder
+      value: -104
+      objectReference: {fileID: 0}
     - target: {fileID: 7529743957830411510, guid: 41e42fe0751d2fe459559af244d08d6e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.752378
@@ -2886,8 +2953,8 @@ SpriteShapeRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1423024161
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3647,7 +3714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1354961251
 Transform:
   m_ObjectHideFlags: 0
@@ -3723,7 +3790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Brackeys2026.FarmCrackedCeiling
   _anim: {fileID: 267171533}
   _collider: {fileID: 1354961252}
-  _crop: {fileID: 1134841213}
+  _waterSlide: {fileID: 0}
 --- !u!1 &1370611703
 GameObject:
   m_ObjectHideFlags: 0
@@ -4109,6 +4176,10 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8161279738001570288, guid: af3e40d92bd747e4e894002c58682a40, type: 3}
+      propertyPath: m_SortingOrder
+      value: -104
+      objectReference: {fileID: 0}
     - target: {fileID: 9131006381747474847, guid: af3e40d92bd747e4e894002c58682a40, type: 3}
       propertyPath: m_Name
       value: Left Leaf
@@ -4313,6 +4384,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1097002730}
     m_Modifications:
+    - target: {fileID: 2980324826036429888, guid: 41e42fe0751d2fe459559af244d08d6e, type: 3}
+      propertyPath: m_SortingOrder
+      value: -104
+      objectReference: {fileID: 0}
     - target: {fileID: 7529743957830411510, guid: 41e42fe0751d2fe459559af244d08d6e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.693019
@@ -5186,6 +5261,29 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &2038329918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6499962279502847006, guid: f106e984d34af934b9073e8c6cfa8d43, type: 3}
+  m_PrefabInstance: {fileID: 7609477745158605575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2038329919 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4710844843673697217, guid: f106e984d34af934b9073e8c6cfa8d43, type: 3}
+  m_PrefabInstance: {fileID: 7609477745158605575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2038329922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038329918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966e0b5bac4aa5b4982b8128df3404ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Brackeys2026.WaterSlideAnimationEvents
+  _crop: {fileID: 1134841213}
 --- !u!1 &2135283201
 GameObject:
   m_ObjectHideFlags: 0
@@ -5545,6 +5643,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1884585141382467333, guid: f106e984d34af934b9073e8c6cfa8d43, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215723750860447448, guid: f106e984d34af934b9073e8c6cfa8d43, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6499962279502847006, guid: f106e984d34af934b9073e8c6cfa8d43, type: 3}
       propertyPath: m_Name
       value: Water Slide
@@ -5592,7 +5698,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6499962279502847006, guid: f106e984d34af934b9073e8c6cfa8d43, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2038329922}
   m_SourcePrefab: {fileID: 100100000, guid: f106e984d34af934b9073e8c6cfa8d43, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

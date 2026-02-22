@@ -6,7 +6,7 @@ namespace Brackeys2026
     {
         [SerializeField] private Animator _anim;
         [SerializeField] private Collider2D _collider;
-        [SerializeField] private Crop _crop;
+        [SerializeField] private Animator _waterSlide;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start() {
@@ -22,13 +22,17 @@ namespace Brackeys2026
         public void TakeDamage(int a_amount = 1) {
             _anim.Play("Fall");
             _collider.enabled = false;
-            float time = _anim.GetCurrentAnimatorStateInfo(0).length;
+            //float time = _anim.GetCurrentAnimatorStateInfo(0).length;
 
-            Invoke(nameof(WaterPlant), time);
+            //Invoke(nameof(WaterPlant), time);
         }
 
         private void WaterPlant() {
-            _crop._isWatered = true;
+            //_crop._isWatered = true;
+        }
+
+        public void BeginWaterSlide() {
+            _waterSlide.Play("WaterSlide");
         }
     }
 }

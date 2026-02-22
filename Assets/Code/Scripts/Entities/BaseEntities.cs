@@ -9,6 +9,8 @@ namespace Brackeys2026
         protected int _currentHealth;
         [SerializeField] protected int _maxHealth = 3;
 
+        [SerializeField] private AudioClip _damageClip;
+
         #endregion Variables
 
         #region Unity Methods
@@ -34,6 +36,8 @@ namespace Brackeys2026
 
         virtual public void TakeDamage(int a_damage = 1) {
             _currentHealth -= a_damage;
+
+            SoundFXManager.Instance.PlaySound(_damageClip, transform, Mathf.Clamp(0.64f * a_damage, 0.64f, 1f));
 
             if (_currentHealth <= 0) {
                 DefeatEntity();

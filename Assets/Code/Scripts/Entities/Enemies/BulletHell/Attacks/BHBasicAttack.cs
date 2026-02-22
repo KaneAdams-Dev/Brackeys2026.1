@@ -28,6 +28,8 @@ namespace Brackeys2026
             if (spawnedObj.TryGetComponent(out BHProjectiles projectile)) {
                 projectile.SetupProjectile(_enemy._currentStats);
             }
+
+            SoundFXManager.Instance.PlaySound(_enemy.projectileClip, transform, 0.9f);
         }
 
         #endregion Custom Methods

@@ -7,12 +7,15 @@ namespace Brackeys2026
     {
         [SerializeField] private GameObject _plant;
 
-        [SerializeField] private bool _isWatered;
+        public bool _isWatered;
         private bool _hasSeed;
         [SerializeField] private SpriteRenderer spriteRend;
         [SerializeField] private Sprite _Planted;
 
         public static event Action OnSeedPlanted;
+
+        [SerializeField] private AudioClip _beanStalkGrownClip;
+        [SerializeField] private AudioClip _seedPlantedClip;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start() {
@@ -32,8 +35,10 @@ namespace Brackeys2026
         }
 
         public void Interact(Player player) {
+            if (spriteRend.sprite == _Planted) return;
             _hasSeed = player.hasSeed;
             spriteRend.sprite = _Planted;
+            SoundFXManager.Instance.PlaySound(_seedPlantedClip, transform);
             OnSeedPlanted?.Invoke();
         }
 
@@ -42,6 +47,7 @@ namespace Brackeys2026
 
             if (_hasSeed) {
                 _plant.SetActive(true);
+                SoundFXManager.Instance.PlaySound(_beanStalkGrownClip, _plant.transform);
             }
         }
     }

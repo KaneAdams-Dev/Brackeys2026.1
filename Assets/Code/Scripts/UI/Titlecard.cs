@@ -39,7 +39,7 @@ namespace Brackeys2026
         private void ShowText() {
             _title.SetActive(true);
 
-            Invoke(nameof(HideText), 5f);
+            Invoke(nameof(HideText), 3f);
         }
 
         private void HideText() {

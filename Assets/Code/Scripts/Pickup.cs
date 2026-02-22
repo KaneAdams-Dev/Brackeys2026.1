@@ -11,6 +11,8 @@ namespace Brackeys2026
 
         public static event Action OnPickup;
 
+        [SerializeField] private AudioClip _pickupSound;
+
         #endregion Variables
 
         #region Unity Methods
@@ -36,9 +38,11 @@ namespace Brackeys2026
         virtual public void Interact(Player a_player) {
             a_player.EquipToolOrAbility(_pickedUpItem);
 
-            if (_pickedUpItem != ToolsAndAbilities.Seed) {
-                OnPickup?.Invoke();
+            if (_pickupSound != null) {
+                SoundFXManager.Instance.PlaySound(_pickupSound, transform, 0.85f);
             }
+
+            OnPickup?.Invoke();
 
             Destroy(gameObject);
         }

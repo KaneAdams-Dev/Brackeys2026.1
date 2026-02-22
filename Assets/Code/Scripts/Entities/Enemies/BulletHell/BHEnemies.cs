@@ -32,6 +32,8 @@ namespace Brackeys2026
 
         public bool isNormalEnemy;
 
+        internal AudioClip projectileClip;
+
         #endregion Variables
 
         #region Unity Methods
@@ -103,6 +105,7 @@ namespace Brackeys2026
             _anim.controller.runtimeAnimatorController = a_stats.Anim;
 
             _droppableItem = a_stats.DroppableItem;
+            projectileClip = a_stats.ProjectileClip;
 
             if (isNormalEnemy) {
                 movement._targetPosition = new Vector2(0f, Random.Range(5f, 10f));

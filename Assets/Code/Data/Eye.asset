@@ -21,5 +21,7 @@ MonoBehaviour:
   _projectileAnim: {fileID: 9100000, guid: 5995341c44e2e364c856648e6d655e98, type: 2}
   _projectileSpeed: 15
   _projectileStrength: 1
+  _projectileClip: {fileID: 8300000, guid: 6bc41e00a820c1647af640229f7063d9, type: 3}
   _movement: 0
   _moveSpeed: 5
+  _droppableItem: {fileID: 0}

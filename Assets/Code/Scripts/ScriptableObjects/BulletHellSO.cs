@@ -43,6 +43,9 @@ namespace Brackeys2026
         [SerializeField] private int _projectileStrength;
         public int ProjectileStrength => _projectileStrength;
 
+        [SerializeField] private AudioClip _projectileClip;
+        public AudioClip ProjectileClip => _projectileClip;
+
 
         [Header("Movement")]
         [SerializeReference] private BHDifficulties _movement;

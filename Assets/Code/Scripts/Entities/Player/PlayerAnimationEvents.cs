@@ -8,6 +8,10 @@ namespace Brackeys2026
 
         [SerializeField] private Player _player;
 
+        [SerializeField] private AudioClip _footstepClip;
+        [SerializeField] private AudioClip _jumpClip;
+        [SerializeField] private AudioClip _landClip;
+
         #endregion Variables
 
         #region Unity Methods
@@ -25,6 +29,18 @@ namespace Brackeys2026
         #endregion Unity Methods
 
         #region Custom Methods
+
+        public void PlayWalkSound() {
+            SoundFXManager.Instance.PlaySound(_footstepClip, transform, 0.2f);
+        }
+
+        public void PlayJumpSound() {
+            SoundFXManager.Instance.PlaySound(_jumpClip, transform, 0.8f);
+        }
+
+        public void PlayLandSound() {
+            SoundFXManager.Instance.PlaySound(_landClip, transform, 1f);
+        }
 
         public void ExitLanding() {
             _player.animator.canInterupt = true;

@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Brackeys2026.BulletHellSO
   _icon: {fileID: -4325669524640813698, guid: afa7d073f63a2fc4eaf089f83371ffcb, type: 3}
   _anim: {fileID: 9100000, guid: a672e02aadea2dd4bb9492c9952c7bdf, type: 2}
-  _health: 5
+  _health: 25
   _attack: 0
-  _fireRate: 1
+  _fireRate: 0.64
   _projectile: {fileID: 3834722508509491278, guid: ffb30681c072a564088a9faa88554d9a, type: 3}
   _projectileAnim: {fileID: 9100000, guid: 46914a3e58e89584cae07e420be208d6, type: 2}
   _projectileSpeed: 50
-  _projectileStrength: 5
+  _projectileStrength: 3
+  _projectileClip: {fileID: 8300000, guid: a37094218669fd248a05cdac970fe4b3, type: 3}
   _movement: 2
   _moveSpeed: 5
-  _droppableItem: {fileID: 0}
+  _droppableItem: {fileID: 6539642098695824435, guid: 80620fb1fbd26c3408a3cbf4b2d76b9f, type: 3}

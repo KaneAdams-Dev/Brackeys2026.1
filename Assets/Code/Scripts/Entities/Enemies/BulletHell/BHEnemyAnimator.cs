@@ -11,6 +11,8 @@ namespace Brackeys2026
 
         private string _currentClip;
 
+        [SerializeField] private AudioClip _deathClip;
+
         #endregion Variables
 
         #region Unity Methods
@@ -38,6 +40,10 @@ namespace Brackeys2026
 
         public void DespawnEnemy() {
             ObjectPoolManager.ReturnToPool(_enemy.gameObject);
+        }
+
+        public void PlayDeathClip() {
+            SoundFXManager.Instance.PlaySound(_deathClip, transform);
         }
 
         #endregion Custom Methods

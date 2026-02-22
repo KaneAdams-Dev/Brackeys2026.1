@@ -61,6 +61,8 @@ namespace Brackeys2026
         public GameObject _swordGO;
         public GameObject _gunGO;
 
+        [SerializeField] private AudioClip _shotClip;
+
         #endregion Variables
 
         #region Unity Methods
@@ -196,6 +198,7 @@ namespace Brackeys2026
 
         internal void ShootGun() {
             GameObject spawned = ObjectPoolManager.SpawnObject(_projectile, _gun.position, Quaternion.identity);
+            SoundFXManager.Instance.PlaySound(_shotClip, transform, 0.9f);
             //Instantiate(_projectile, _gun.position, Quaternion.identity);
             //spawned.GetComponent<PlayerProjectiles>().SetupProjectile(, 1, 1);
         }

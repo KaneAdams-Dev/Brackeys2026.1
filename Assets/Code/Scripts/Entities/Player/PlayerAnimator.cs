@@ -28,6 +28,7 @@ namespace Brackeys2026
         private int _unarmnedLayer;
 
         [Range(0, 1)][SerializeField] private float _layerFadeDuration = 0.5f;
+        [SerializeField] private AudioClip _swordSwish;
 
         #endregion Variables
 
@@ -66,6 +67,7 @@ namespace Brackeys2026
             //StartCoroutine(FadeInWeaponLayer(_swordAttackLayer, 1f, 0f));
             _anim.SetLayerWeight(_swordAttackLayer, 1f);
             _anim.Play("SwordAttack", _swordAttackLayer, 0f);
+            SoundFXManager.Instance.PlaySound(_swordSwish, transform, 0.8f);
         }
 
         internal void EquipSword() {

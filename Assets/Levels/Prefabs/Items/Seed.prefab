@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Brackeys2026.Pickup
   _pickedUpItem: 3
+  _pickupSound: {fileID: 8300000, guid: e30a4f7487d7089469a986920d437da5, type: 3}
 --- !u!58 &3499195042534730083
 CircleCollider2D:
   m_ObjectHideFlags: 0

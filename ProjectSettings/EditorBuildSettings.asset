@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Levels/Scenes/MainMenuScene.unity
+    guid: d020efb9fe6bbb94882fbb3e1eedabda
+  - enabled: 1
     path: Assets/Levels/Scenes/Game Levels/MetroidvaniaScene.unity
     guid: 4cf71f5e37ccd994d8d478a884c3f9bd
   - enabled: 1

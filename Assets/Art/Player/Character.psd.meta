@@ -6138,16 +6138,6 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: chest
-    spriteName: chest
-    isGroup: 0
-    parentIndex: 0
-    spriteID: db4b105a2efec04408866988d4c4283f
-    layerID: 44
-    mosaicPosition: {x: 224, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
   - name: head
     spriteName: head
     isGroup: 0
@@ -6155,6 +6145,16 @@ ScriptedImporter:
     spriteID: 36483fb4e3e1f95469340822949b15b6
     layerID: 52
     mosaicPosition: {x: 4, y: 898}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: chest
+    spriteName: chest
+    isGroup: 0
+    parentIndex: 0
+    spriteID: db4b105a2efec04408866988d4c4283f
+    layerID: 44
+    mosaicPosition: {x: 224, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1

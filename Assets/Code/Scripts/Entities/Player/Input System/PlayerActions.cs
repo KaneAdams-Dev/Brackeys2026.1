@@ -94,7 +94,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Movement"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""b8c4cf96-3d18-488e-8f51-ee28f8a6aedd"",
                     ""expectedControlType"": """",
                     ""processors"": """",
@@ -197,7 +197,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""id"": ""bad66bda-c367-4b06-b0c2-7dece4a61b12"",
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
-                    ""processors"": ""AxisDeadzone,Normalize(max=1)"",
+                    ""processors"": ""AxisDeadzone"",
                     ""groups"": "";Controller"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
@@ -208,7 +208,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""id"": ""207f349e-503f-4093-8340-6f1f7e87d1df"",
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
-                    ""processors"": ""AxisDeadzone,Normalize(max=1)"",
+                    ""processors"": ""AxisDeadzone"",
                     ""groups"": "";Controller"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,

@@ -121,6 +121,8 @@ namespace Brackeys2026
         }
 
         private void OnJumpPerformed(InputAction.CallbackContext context) {
+            if (player.isGroundPounding) return;
+
             if (player.isJumping) {
                 player.movement.DoubleJump();
             }

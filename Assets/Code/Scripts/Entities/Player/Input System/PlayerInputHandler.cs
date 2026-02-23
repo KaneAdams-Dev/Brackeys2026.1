@@ -15,7 +15,7 @@ namespace Brackeys2026
 
         internal float horizontalInput;
 
-        private bool _isInteracting;
+        //private bool _isInteracting;
 
         public Vector2 boxSize = new Vector2(1f, 0.8f);
         public float castDistance = 1.5f;
@@ -33,19 +33,7 @@ namespace Brackeys2026
             playerActions = new PlayerActions();
             _mapActions = playerActions.Metroidvania;
 
-            ColourLogger.RegisterColour(this, "cyan");
-
-            _isInteracting = false;
-        }
-
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        private void Start() {
-        }
-
-        // Update is called once per frame
-        private void Update() {
-
-
+            //_isInteracting = false;
         }
 
         // This function is called when the object becomes enabled and active
@@ -58,21 +46,21 @@ namespace Brackeys2026
             DisableInputs();
         }
 
-        // Implement this OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn
-        private void OnDrawGizmos() {
-            Gizmos.color = Color.yellow;
+        //// Implement this OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn
+        //private void OnDrawGizmos() {
+        //    Gizmos.color = Color.yellow;
 
-            //if (_isInteracting) {
-            //    ColourLogger.Log(this, "Is Interacting");
-            //}
+        //    //if (_isInteracting) {
+        //    //    ColourLogger.Log(this, "Is Interacting");
+        //    //}
 
-            //Gizmos.DrawWireCube(transform.position, (transform.right * (player.animator.transform.position.x < 0f ? -1 : 1)));
+        //    //Gizmos.DrawWireCube(transform.position, (transform.right * (player.animator.transform.position.x < 0f ? -1 : 1)));
 
-            Vector3 center = transform.position + (Vector3)(new Vector2(player.animator.transform.localScale.x, 0).normalized * castDistance * 0.5f) + pivotOffet;
-            Vector3 size = new Vector3(boxSize.x, boxSize.y, 0f);
+        //    Vector3 center = transform.position + (Vector3)(new Vector2(player.animator.transform.localScale.x, 0).normalized * castDistance * 0.5f) + pivotOffet;
+        //    Vector3 size = new Vector3(boxSize.x, boxSize.y, 0f);
 
-            Gizmos.DrawWireCube(center, size);
-        }
+        //    Gizmos.DrawWireCube(center, size);
+        //}
 
         #endregion Unity Methods
 
@@ -135,8 +123,7 @@ namespace Brackeys2026
         }
 
         private void OnInteractPerformed(InputAction.CallbackContext context) {
-            ColourLogger.Log(this, "Interact Pressed");
-            _isInteracting = true;
+            //_isInteracting = true;
             //Physics2D.BoxCast(transform.position, new Vector2(2, 5), 0f, transform.right, 0.25f);
 
             //RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, Vector2.right, 0, Vector2.zero);
@@ -155,7 +142,7 @@ namespace Brackeys2026
         }
 
         private void OnInteractCanceled(InputAction.CallbackContext context) {
-            _isInteracting = false;
+            //_isInteracting = false;
         }
 
         internal void EnableGroundPound() {

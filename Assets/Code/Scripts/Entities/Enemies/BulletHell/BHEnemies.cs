@@ -63,19 +63,11 @@ namespace Brackeys2026
             _isReleased = false;
         }
 
-        // This function is called when the behaviour becomes disabled or inactive
-        private void OnDisable() {
-
-        }
-
-
         #endregion Unity Methods
 
         #region Custom Methods
 
         public void AssignStats(BulletHellSO a_stats) {
-            ColourLogger.Log(this, "Stats assigning");
-
             _currentStats = a_stats;
             //attack = a_stats.Attack;
             //movement = a_stats.Movement;
@@ -125,8 +117,6 @@ namespace Brackeys2026
                 ObjectPoolManager.SpawnObject(_droppableItem, transform.position, _droppableItem.transform.rotation);
                 _droppableItem = null;
             }
-
-            ColourLogger.Log(this, "Destroying enemies");
 
             Destroy(movement);
             Destroy(attack);

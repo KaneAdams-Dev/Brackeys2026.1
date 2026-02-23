@@ -33,13 +33,6 @@ namespace Brackeys2026
             _screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
             float twoThirds = (_screenBounds.y / 3);
-            ColourLogger.Log(this, _screenBounds.y.ToString());
-
-        }
-
-        // Update is called once per frame
-        private void Update() {
-
         }
 
         // This function is called every fixed framerate frame, if the MonoBehaviour is enabled

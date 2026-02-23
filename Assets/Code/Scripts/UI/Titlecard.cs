@@ -27,10 +27,6 @@ namespace Brackeys2026
             Pickup.OnPickup -= ShowText;
         }
 
-        // Update is called once per frame
-        private void Update() {
-
-        }
 
         #endregion Unity Methods
 

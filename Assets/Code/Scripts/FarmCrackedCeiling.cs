@@ -14,11 +14,6 @@ namespace Brackeys2026
             _collider.enabled = true;
         }
 
-        // Update is called once per frame
-        void Update() {
-
-        }
-
         public void TakeDamage(int a_amount = 1) {
             _anim.Play("Fall");
             _collider.enabled = false;

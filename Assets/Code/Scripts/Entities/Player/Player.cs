@@ -36,7 +36,7 @@ namespace Brackeys2026
         [Header("Stats")]
         [SerializeField] internal float moveSpeed = 10f;
 
-        internal bool canJump;
+        //internal bool canJump;
         internal bool isJumping;
 
         internal bool isGroundPounding;
@@ -90,10 +90,6 @@ namespace Brackeys2026
             if (hasGun) {
                 inputHandler.EnableGun();
             }
-
-            if (hasSeed) {
-
-            }
         }
 
         // Update is called once per frame
@@ -104,10 +100,10 @@ namespace Brackeys2026
 
             if (isGroundPounding) {
 
-                Debug.DrawRay(transform.position, Vector2.down * _raySize, Color.green, 0.2f);
-                if (Physics2D.Raycast(transform.position, Vector2.down, _raySize, _groundPoundLayers)) {
+                //Debug.DrawRay(transform.position, Vector2.down * _raySize, Color.green, 0.2f);
+                //if (Physics2D.Raycast(transform.position, Vector2.down, _raySize, _groundPoundLayers)) {
 
-                }
+                //}
 
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, _raySize, _groundPoundLayers);
                 if (hit) {
@@ -140,7 +136,7 @@ namespace Brackeys2026
         #region Custom Methods
 
         internal void UpdateState(PlayerStates a_newState, int a_layer = 0) {
-            if (_currentState == a_newState) return;
+            if (_currentState == a_newState && a_newState != PlayerStates.Jump) return;
             if (!animator.canInterupt) return;
 
 

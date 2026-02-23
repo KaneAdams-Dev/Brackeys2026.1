@@ -26,6 +26,7 @@ namespace Brackeys2026
         private int _swordAttackLayer;
         private int _gunLayer;
         private int _unarmnedLayer;
+        internal bool _isAttacking;
 
         [Range(0, 1)][SerializeField] private float _layerFadeDuration = 0.5f;
         [SerializeField] private AudioClip _swordSwish;
@@ -43,12 +44,9 @@ namespace Brackeys2026
             _gunLayer = _anim.GetLayerIndex("Gun Up");
             _unarmnedLayer = _anim.GetLayerIndex("Unarmed");
 
+            _isAttacking = false;
+
             Unarm();
-        }
-
-        // Update is called once per frame
-        private void Update() {
-
         }
 
         #endregion Unity Methods
@@ -56,14 +54,15 @@ namespace Brackeys2026
         #region Custom Methods
 
         internal void UpdateAnimation(string a_newClip, int a_animLayer = 0) {
-            if (_currentClip == a_newClip) return;
+            if (_currentClip == a_newClip && a_newClip != PlayerStates.Jump.ToString()) return;
 
             //ColourLogger.Log(this, a_newClip);
             _currentClip = a_newClip;
-            _anim.Play(_currentClip, a_animLayer);
+            _anim.Play(_currentClip, a_animLayer, 0f);
         }
 
         internal void PlaySwordAttack() {
+            _isAttacking = true;
             //StartCoroutine(FadeInWeaponLayer(_swordAttackLayer, 1f, 0f));
             _anim.SetLayerWeight(_swordAttackLayer, 1f);
             _anim.Play("SwordAttack", _swordAttackLayer, 0f);
@@ -73,7 +72,6 @@ namespace Brackeys2026
         internal void EquipSword() {
             //_anim.SetLayerWeight(_gunLayer, 0f);
             //_anim.SetLayerWeight(_swordLayer, 1f);
-
             StartCoroutine(FadeInWeaponLayer(_gunLayer, 0f, _layerFadeDuration));
             StartCoroutine(FadeInWeaponLayer(_unarmnedLayer, 0f, _layerFadeDuration));
             StartCoroutine(FadeInWeaponLayer(_swordLayer, 1f, _layerFadeDuration));
@@ -96,6 +94,8 @@ namespace Brackeys2026
         }
 
         internal void StopSwordAttack() {
+            _isAttacking = false;
+
             StartCoroutine(FadeInWeaponLayer(_swordAttackLayer, 0f, 0f));
         }
 

@@ -19,13 +19,8 @@ namespace Brackeys2026
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start() {
             _screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-            ColourLogger.Log(this, $"Screenbounds: {_screenBounds}");
         }
 
-        // Update is called once per frame
-        private void Update() {
-
-        }
 
         // LateUpdate is called every frame, if the Behaviour is enabled
         private void LateUpdate() {

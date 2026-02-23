@@ -9,14 +9,14 @@ namespace Brackeys2026
         [SerializeField] float _xScale = 24;
         [SerializeField] float _yScale = 4;
 
-        [SerializeField] float _xOffset = 0;
-        [SerializeField] float _yOffset = 0;
+        //[SerializeField] float _xOffset = 0;
+        //[SerializeField] float _yOffset = 0;
 
-        Vector3 _pivot;
-        Vector3 _pivotOffset;
-        float _phase;
-        bool _isInvert = false;
-        private float _circumference = Mathf.PI * 2;
+        //Vector3 _pivot;
+        //Vector3 _pivotOffset;
+        //float _phase;
+        //bool _isInvert = false;
+        //private float _circumference = Mathf.PI * 2;
 
         bool _reachedTarget;
 
@@ -25,7 +25,7 @@ namespace Brackeys2026
         public bool isLinkOffsetScalePositiveZ = false;
         public bool isLinkOffsetScaleNegativeZ = false;
 
-        bool isRunning = false;
+        //bool isRunning = false;
 
         #endregion Variables
 
@@ -35,53 +35,53 @@ namespace Brackeys2026
         override protected void Start() {
             base.Start();
 
-            _pivot = transform.position;
+            //_pivot = transform.position;
             _reachedTarget = false;
-            isRunning = true;
+            //isRunning = true;
         }
 
         private void OnEnable() {
-            if (isLinkOffsetScalePositiveX)
-                _phase = Mathf.PI / 2f + Mathf.PI;
-            else if (isLinkOffsetScaleNegativeX)
-                _phase = Mathf.PI / 2f;
-            else if (isLinkOffsetScalePositiveZ)
-                _phase = Mathf.PI;
-            else
-                _phase = 0;
+            //if (isLinkOffsetScalePositiveX)
+            //    _phase = Mathf.PI / 2f + Mathf.PI;
+            //else if (isLinkOffsetScaleNegativeX)
+            //    _phase = Mathf.PI / 2f;
+            //else if (isLinkOffsetScalePositiveZ)
+            //    _phase = Mathf.PI;
+            //else
+            //    _phase = 0;
 
-            _pivot = transform.position;
+            //_pivot = transform.position;
             _reachedTarget = false;
-            isRunning = true;
+            //isRunning = true;
         }
 
-        void OnDrawGizmos() {
-            if (isLinkOffsetScalePositiveX)
-                _xOffset = _xScale;
-            else if (isLinkOffsetScaleNegativeX)
-                _xOffset = _xScale * -1;
-            else
-                _xOffset = 0;
+        //void OnDrawGizmos() {
+        //    if (isLinkOffsetScalePositiveX)
+        //        _xOffset = _xScale;
+        //    else if (isLinkOffsetScaleNegativeX)
+        //        _xOffset = _xScale * -1;
+        //    else
+        //        _xOffset = 0;
 
-            if (isLinkOffsetScalePositiveZ)
-                _yOffset = _yScale;
-            else if (isLinkOffsetScaleNegativeZ)
-                _yOffset = _yScale * -1;
-            else
-                _yOffset = 0;
+        //    if (isLinkOffsetScalePositiveZ)
+        //        _yOffset = _yScale;
+        //    else if (isLinkOffsetScaleNegativeZ)
+        //        _yOffset = _yScale * -1;
+        //    else
+        //        _yOffset = 0;
 
-            if (isRunning) {
-                Gizmos.DrawLine(new Vector3(_targetPosition.x + _xOffset, _targetPosition.y, _targetPosition.y + _yScale + _yOffset), new Vector3(_targetPosition.x + _xScale, _targetPosition.y, _targetPosition.y + _yOffset));
-                Gizmos.DrawLine(new Vector3(_targetPosition.x + _xOffset, _targetPosition.y, _targetPosition.y - _yScale + _yOffset), new Vector3(_targetPosition.x + _xScale, _targetPosition.y, _targetPosition.y + _yOffset));
-                Gizmos.DrawLine(new Vector3(_targetPosition.x + _xScale + _xOffset, _targetPosition.y + _yOffset, _targetPosition.y), new Vector3(_targetPosition.x + _xScale, _targetPosition.y, _targetPosition.y + _yOffset));
-                Gizmos.DrawLine(new Vector3(_targetPosition.x - _xScale + _xOffset, _targetPosition.y + _yOffset, _targetPosition.y), new Vector3(_targetPosition.x + _xScale, _targetPosition.y, _targetPosition.y + _yOffset));
-            } else {
-                Gizmos.DrawLine(new Vector3(transform.position.x + _xOffset, transform.position.y, transform.position.z + _yScale + _yOffset), new Vector3(transform.position.x + _xScale, transform.position.y, transform.position.z + _yOffset));
-                Gizmos.DrawLine(new Vector3(transform.position.x + _xOffset, transform.position.y, transform.position.z - _yScale + _yOffset), new Vector3(transform.position.x + _xScale, transform.position.y, transform.position.z + _yOffset));
-                Gizmos.DrawLine(new Vector3(transform.position.x + _xScale + _xOffset, transform.position.y, transform.position.z + _yOffset), new Vector3(transform.position.x + _xScale, transform.position.y, transform.position.z + _yOffset));
-                Gizmos.DrawLine(new Vector3(transform.position.x - _xScale + _xOffset, transform.position.y, transform.position.z + _yOffset), new Vector3(transform.position.x + _xScale, transform.position.y, transform.position.z + _yOffset));
-            }
-        }
+        //    if (isRunning) {
+        //        Gizmos.DrawLine(new Vector3(_targetPosition.x + _xOffset, _targetPosition.y, _targetPosition.y + _yScale + _yOffset), new Vector3(_targetPosition.x + _xScale, _targetPosition.y, _targetPosition.y + _yOffset));
+        //        Gizmos.DrawLine(new Vector3(_targetPosition.x + _xOffset, _targetPosition.y, _targetPosition.y - _yScale + _yOffset), new Vector3(_targetPosition.x + _xScale, _targetPosition.y, _targetPosition.y + _yOffset));
+        //        Gizmos.DrawLine(new Vector3(_targetPosition.x + _xScale + _xOffset, _targetPosition.y + _yOffset, _targetPosition.y), new Vector3(_targetPosition.x + _xScale, _targetPosition.y, _targetPosition.y + _yOffset));
+        //        Gizmos.DrawLine(new Vector3(_targetPosition.x - _xScale + _xOffset, _targetPosition.y + _yOffset, _targetPosition.y), new Vector3(_targetPosition.x + _xScale, _targetPosition.y, _targetPosition.y + _yOffset));
+        //    } else {
+        //        Gizmos.DrawLine(new Vector3(transform.position.x + _xOffset, transform.position.y, transform.position.z + _yScale + _yOffset), new Vector3(transform.position.x + _xScale, transform.position.y, transform.position.z + _yOffset));
+        //        Gizmos.DrawLine(new Vector3(transform.position.x + _xOffset, transform.position.y, transform.position.z - _yScale + _yOffset), new Vector3(transform.position.x + _xScale, transform.position.y, transform.position.z + _yOffset));
+        //        Gizmos.DrawLine(new Vector3(transform.position.x + _xScale + _xOffset, transform.position.y, transform.position.z + _yOffset), new Vector3(transform.position.x + _xScale, transform.position.y, transform.position.z + _yOffset));
+        //        Gizmos.DrawLine(new Vector3(transform.position.x - _xScale + _xOffset, transform.position.y, transform.position.z + _yOffset), new Vector3(transform.position.x + _xScale, transform.position.y, transform.position.z + _yOffset));
+        //    }
+        //}
 
         #endregion Unity Methods
 

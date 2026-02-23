@@ -53,16 +53,6 @@ namespace Brackeys2026
             }
         }
 
-        // Update is called once per frame
-        private void Update() {
-            //if (Keyboard.current.kKey.wasPressedThisFrame) {
-            //    if (IsInvoking(nameof(SpawnEnemies))) {
-            //        OnBossSpawn();
-            //    } else {
-            //        //OnStartLevel();
-            //    }
-            //}
-        }
 
         // This function is called when the object becomes enabled and active
         private void OnEnable() {
@@ -85,7 +75,6 @@ namespace Brackeys2026
             enemiesAlive--;
 
             if (enemiesAlive <= 0) {
-                ColourLogger.Log(this, "Spawning Enemies...");
                 wave++;
 
                 if (wave == 5) {
@@ -110,7 +99,7 @@ namespace Brackeys2026
                 return;
             }
 
-            float randomX = Random.Range(_screenBounds.x + _objectWidth - 15f, _screenBounds.x * -1 + _objectWidth + 15f);
+            float randomX = Random.Range(_screenBounds.x + _objectWidth - 25f, _screenBounds.x * -1 + _objectWidth + 25f);
 
             //GameObject spawnedObj = Instantiate(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);
             GameObject spawnedObj = ObjectPoolManager.SpawnObject(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);//Instantiate(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);
@@ -127,7 +116,7 @@ namespace Brackeys2026
             CancelInvoke();
 
 
-            float randomX = Random.Range(_screenBounds.x - _objectWidth, _screenBounds.x * -1 + _objectWidth);
+            //float randomX = Random.Range(_screenBounds.x - _objectWidth, _screenBounds.x * -1 + _objectWidth);
             float spawnY = (_screenBounds.y + _objectHeight) + 5;
             GameObject spawnedObj = ObjectPoolManager.SpawnObject(_enemyPrefab, new Vector2(0f, spawnY), _enemyPrefab.transform.rotation);//Instantiate(_enemyPrefab, new Vector2(randomX, spawnY), _enemyPrefab.transform.rotation);
             if (spawnedObj.TryGetComponent(out BHEnemies enemy)) {

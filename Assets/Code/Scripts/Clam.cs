@@ -26,13 +26,7 @@ namespace Brackeys2026
             Pickup.OnPickup -= RevealNextLevel;
         }
 
-        // Update is called once per frame
-        void Update() {
-
-        }
-
         public void Break() {
-            ColourLogger.Log(this, "Break!");
             _collider.enabled = false;
             _anim.Play("Clam Open");
             Instantiate(_seed, transform.position, Quaternion.identity);

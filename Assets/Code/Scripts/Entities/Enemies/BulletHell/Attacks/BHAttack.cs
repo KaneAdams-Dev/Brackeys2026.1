@@ -19,11 +19,6 @@ namespace Brackeys2026
             _enemy = GetComponent<BHEnemies>();
         }
 
-        // Update is called once per frame
-        private void Update() {
-
-        }
-
         #endregion Unity Methods
 
         #region Custom Methods

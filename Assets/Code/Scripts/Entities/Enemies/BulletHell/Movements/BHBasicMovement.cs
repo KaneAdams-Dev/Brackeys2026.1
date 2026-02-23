@@ -20,8 +20,6 @@ namespace Brackeys2026
 
         #region Custom Methods
 
-
-
         internal override void Move(Transform a_target = null) {
             base.Move(a_target);
 

@@ -14,7 +14,7 @@ namespace Brackeys2026
         [SerializeField] private float _jumpForce = 100f;
         [SerializeField] private float _groundPoundForce = -32f;
 
-        [SerializeField] private float _raySize = 10f;
+        //[SerializeField] private float _raySize = 10f;
         [SerializeField] private LayerMask _jumpableLayers;
 
         private float _coyoteTime = 0.2f;
@@ -42,11 +42,6 @@ namespace Brackeys2026
 
         #region Unity Methods
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        private void Start() {
-            ColourLogger.RegisterColour(this, "cyan");
-        }
-
         // Update is called once per frame
         private void Update() {
             if (CheckIfGrounded()) {
@@ -58,8 +53,6 @@ namespace Brackeys2026
                 canDoubleJump = true;
                 isDoubleJumping = false;
                 //StopGroundPound();
-
-
 
             } else {
                 _coyoteTimeCounter -= Time.deltaTime;
@@ -77,15 +70,13 @@ namespace Brackeys2026
             Jump();
         }
 
-        // Implement this OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn
-        private void OnDrawGizmos() {
-            Vector3 center = transform.position + (Vector3)(facingDirection.normalized * castDistance * 0.5f) + pivotOffet;
-            Vector3 size = new Vector3(boxSize.x, boxSize.y, 0f);
+        //// Implement this OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn
+        //private void OnDrawGizmos() {
+        //    Vector3 center = transform.position + (Vector3)(facingDirection.normalized * castDistance * 0.5f) + pivotOffet;
+        //    Vector3 size = new Vector3(boxSize.x, boxSize.y, 0f);
 
-            Gizmos.DrawWireCube(center, size);
-        }
-
-
+        //    Gizmos.DrawWireCube(center, size);
+        //}
 
         #endregion Unity Methods
 
@@ -168,8 +159,10 @@ namespace Brackeys2026
         }
 
         internal void GroundPound() {
-            if (CheckIfGrounded()) {
-                return;
+            if (CheckIfGrounded()) return;
+
+            if (player.animator._isAttacking) {
+                player.animator.StopSwordAttack();
             }
 
             player.UpdateState(PlayerStates.GroundPoundFall);
@@ -198,7 +191,6 @@ namespace Brackeys2026
         }
 
         internal bool CheckIfGrounded() {
-            Debug.DrawRay(transform.position, Vector2.down * _raySize, Color.blue, 0.2f);
             //return Physics2D.Raycast(transform.position, Vector2.down, _raySize, _jumpableLayers);
             return Physics2D.BoxCast(transform.position + pivotOffet, boxSize, 0f, Vector2.zero, castDistance, _jumpableLayers);
         }

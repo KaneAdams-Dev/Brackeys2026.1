@@ -14,11 +14,6 @@ namespace Brackeys2026
             _EndGameText.SetActive(false);
         }
 
-        // Update is called once per frame
-        void Update() {
-
-        }
-
         public void EndGame() {
             _EndGameText.SetActive(true);
 

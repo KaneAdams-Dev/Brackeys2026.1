@@ -431,7 +431,7 @@ MonoBehaviour:
   inputHandler: {fileID: 9214014494067392278}
   movement: {fileID: 6291558144909199384}
   animator: {fileID: 3569544490518163049}
-  moveSpeed: 12.5
+  moveSpeed: 15
   _raySize: 2
   _groundPoundLayers:
     serializedVersion: 2
@@ -590,7 +590,6 @@ MonoBehaviour:
   _rbody: {fileID: 3651031706904725633}
   _jumpForce: 16
   _groundPoundForce: -32
-  _raySize: 0.5
   _jumpableLayers:
     serializedVersion: 2
     m_Bits: 64

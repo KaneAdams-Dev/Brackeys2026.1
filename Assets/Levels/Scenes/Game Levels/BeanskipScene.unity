@@ -11797,11 +11797,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6291558144909199384, guid: 77f002c2867fd674386e194367e6bea4, type: 3}
       propertyPath: _jumpForce
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6291558144909199384, guid: 77f002c2867fd674386e194367e6bea4, type: 3}
       propertyPath: _fallGravity
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6291558144909199384, guid: 77f002c2867fd674386e194367e6bea4, type: 3}
       propertyPath: _jumpGravity
@@ -11809,7 +11809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6291558144909199384, guid: 77f002c2867fd674386e194367e6bea4, type: 3}
       propertyPath: _normalGravity
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6848413346655465093, guid: 77f002c2867fd674386e194367e6bea4, type: 3}
       propertyPath: m_SortingLayer

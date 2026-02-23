@@ -14,7 +14,7 @@ namespace Brackeys2026
 
         private bool _isReleased;
 
-        private float _moveSpeed = 10;
+        private float _moveSpeed = 18;
         private int _attackStrength = 1;
 
         #endregion Variables
